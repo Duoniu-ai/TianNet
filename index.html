@@ -49,7 +49,7 @@ body:before{content:"";position:fixed;inset:0;pointer-events:none;opacity:.28;ba
 </div>
 <svg id="tree" aria-label="TIANNET 天网系统知识网络"></svg>
 <div id="tooltip"></div>
-<div id="status">正在加载系统与资源数据…</div>
+<div id="status">正在加载系统数据…</div>
 <script>
 (() => {
 const svg=d3.select('#tree'),tooltip=document.getElementById('tooltip'),status=document.getElementById('status'),searchInput=document.getElementById('search');
@@ -58,7 +58,6 @@ svg.attr('viewBox',`0 0 ${width} ${height}`);
 const g=svg.append('g').attr('transform','translate(55,55)');
 const zoom=d3.zoom().scaleExtent([0.05,3]).on('zoom',e=>g.attr('transform',e.transform));svg.call(zoom);
 let root,nodeId=0,matches=[],matchQuery='',matchIndex=0;
-// Keep the tree compact like the classic OSINT Framework; use depth spacing for horizontal breathing room.
 const ROW_GAP=24;
 const DEPTH_GAP=300;
 const tree=d3.tree().nodeSize([ROW_GAP,DEPTH_GAP]);
@@ -93,12 +92,11 @@ function runSearch(){const q=searchInput.value.trim().toLowerCase();if(!q)return
 function escapeHtml(v){return String(v).replace(/[&<>'"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;',"'":'&#39;','"':'&quot;'}[c]));}
 function escapeAttr(v){return String(v).replace(/&/g,'&amp;').replace(/"/g,'&quot;');}
 searchInput.addEventListener('keydown',e=>{if(e.key==='Enter')runSearch();});svg.on('click',()=>tooltip.style.display='none');
-Promise.all([d3.json('system.json'),d3.json('arf.json')]).then(([systemData,osintData])=>{
- const osintBranch={name:'OSINT 开源情报资源（OSINT Resources）',type:'branch',children:osintData.children||[]};
- root=d3.hierarchy({name:'天网系统（TIANNET）',type:'root',children:[...(systemData.children||[]),osintBranch]});root.x0=height/2;root.y0=0;root._children=root.children;
+d3.json('system.json').then(systemData=>{
+ root=d3.hierarchy({name:'天网系统（TIANNET）',type:'root',children:systemData.children||[]});root.x0=height/2;root.y0=0;root._children=root.children;
  root.descendants().forEach(d=>{d.id=++nodeId;if(d.depth>0){d._children=d.children;d.children=null;}});
  update(root);const all=visibleDescendants();status.textContent=`已加载 · ${all.length} 个节点 · ${all.filter(d=>d.data.type==='branch').length} 个分支 · ${all.filter(d=>d.data.type==='project').length} 个项目`;
-}).catch(e=>{console.error(e);status.textContent='加载失败：请确认 system.json 与 arf.json 正常。';});
+}).catch(e=>{console.error(e);status.textContent='加载失败：请确认 system.json 正常。';});
 })();
 </script>
 </body>
