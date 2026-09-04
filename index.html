@@ -57,7 +57,9 @@ svg.attr('viewBox',`0 0 ${width} ${height}`);
 const g=svg.append('g').attr('transform','translate(55,55)');
 const zoom=d3.zoom().scaleExtent([0.05,3]).on('zoom',e=>g.attr('transform',e.transform));svg.call(zoom);
 let root,nodeId=0,matches=[],matchQuery='',matchIndex=0;
-const tree=d3.tree().nodeSize([38,300]);
+const ROW_GAP=52;
+const DEPTH_GAP=330;
+const tree=d3.tree().nodeSize([ROW_GAP,DEPTH_GAP]);
 function diagonal(s,t){const mid=(s.y+t.y)/2;return `M${s.y},${s.x}C${mid},${s.x} ${mid},${t.x} ${t.y},${t.x}`;}
 function branchDisplayName(name){return String(name||'').replace(/\s*（[^）]*）\s*$/,'').replace(/\s*\([^)]*\)\s*$/,'').trim();}
 function displayName(d){return d.depth===1 ? branchDisplayName(d.data.name) : d.data.name;}
@@ -65,7 +67,7 @@ function nodeClass(d){return `node ${d.data.type||'category'}${d.data.url?' leaf
 function visibleDescendants(){return root.descendants();}
 function update(source){
  tree(root);
- root.descendants().forEach(d=>d.y=d.depth*300);
+ root.descendants().forEach(d=>d.y=d.depth*DEPTH_GAP);
  const nodes=root.descendants(),links=root.links();
  const nodeSelection=g.selectAll('g.node').data(nodes,d=>d.id);
  const nodeEnter=nodeSelection.enter().append('g').attr('class',nodeClass).attr('transform',`translate(${source.y0||0},${source.x0||0})`)
