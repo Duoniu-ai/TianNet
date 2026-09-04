@@ -1,0 +1,142 @@
+{
+  "name": "天网系统（TIANNET System）",
+  "type": "system-root",
+  "children": [
+    {
+      "name": "天网核心（TIANNET Core）",
+      "type": "branch",
+      "children": [
+        {"name":"TIANNET 天网","type":"project","children":[
+          {"name":"TIANNET Tree 天网知识网络","type":"module"},
+          {"name":"知识体系 / 分类体系","type":"module"},
+          {"name":"实体与关系网络","type":"module"},
+          {"name":"数据治理与溯源","type":"module"}
+        ]},
+        {"name":"统一数据底座","type":"project","children":[
+          {"name":"Raw / Fact / Entity","type":"module"},
+          {"name":"Relationship / Snapshot / Event","type":"module"},
+          {"name":"Insight / Evidence","type":"module"}
+        ]}
+      ]
+    },
+    {
+      "name": "网站情报（Website Intelligence）",
+      "type": "branch",
+      "children": [
+        {"name":"SiteIntel","type":"project","children":[
+          {"name":"Website Intelligence","type":"module"},
+          {"name":"Technology Catalog","type":"module"},
+          {"name":"Technology Profile","type":"module"},
+          {"name":"Evidence / Snapshot / Event","type":"module"},
+          {"name":"Discovery","type":"module"}
+        ]},
+        {"name":"Mangzhuo / Website","type":"project","children":[
+          {"name":"Website Navigation","type":"module"},
+          {"name":"Website Discovery","type":"module"},
+          {"name":"Website Directory","type":"module"},
+          {"name":"Candidate / Seed / Ranking","type":"module"}
+        ]}
+      ]
+    },
+    {
+      "name": "IP 与网络情报（IP & Network Intelligence）",
+      "type": "branch",
+      "children": [
+        {"name":"DUONIU","type":"project","children":[
+          {"name":"IP Intelligence","type":"module"},
+          {"name":"IP / ASN / BGP","type":"module"},
+          {"name":"Domain / DNS","type":"module"},
+          {"name":"Geolocation","type":"module"},
+          {"name":"Infrastructure Intelligence","type":"module"}
+        ]},
+        {"name":"网络资产情报","type":"project","children":[
+          {"name":"Internet Assets","type":"module"},
+          {"name":"DNS / Subdomain","type":"module"},
+          {"name":"TLS / Certificate","type":"module"}
+        ]}
+      ]
+    },
+    {
+      "name": "数据发现与采集（Discovery & Collection）",
+      "type": "branch",
+      "children": [
+        {"name":"Discovery Engine","type":"project","children":[
+          {"name":"Source","type":"module"},
+          {"name":"Ranking","type":"module"},
+          {"name":"Candidate","type":"module"},
+          {"name":"Normalization","type":"module"},
+          {"name":"Verification","type":"module"}
+        ]},
+        {"name":"数据采集系统","type":"project","children":[
+          {"name":"Crawler / Fetch","type":"module"},
+          {"name":"SafeFetch","type":"module"},
+          {"name":"Metadata","type":"module"},
+          {"name":"Evidence Collection","type":"module"}
+        ]}
+      ]
+    },
+    {
+      "name": "AI 与智能代理（AI & Agents）",
+      "type": "branch",
+      "children": [
+        {"name":"AI 编程与开发代理","type":"project","children":[
+          {"name":"Codex","type":"tool"},
+          {"name":"OpenClaw","type":"tool"},
+          {"name":"Ollama / Local Models","type":"module"}
+        ]},
+        {"name":"情报智能层","type":"project","children":[
+          {"name":"Classification","type":"module"},
+          {"name":"Entity Resolution","type":"module"},
+          {"name":"Relationship Inference","type":"module"},
+          {"name":"Insight Generation","type":"module"}
+        ]}
+      ]
+    },
+    {
+      "name": "安全与威胁情报（Security & Threat Intelligence）",
+      "type": "branch",
+      "children": [
+        {"name":"Threat Intelligence","type":"project","children":[
+          {"name":"IOC","type":"module"},
+          {"name":"Malware","type":"module"},
+          {"name":"Vulnerability","type":"module"},
+          {"name":"MITRE ATT&CK","type":"module"}
+        ]},
+        {"name":"安全研究","type":"project","children":[
+          {"name":"Exposure","type":"module"},
+          {"name":"Attack Surface","type":"module"},
+          {"name":"Security Evidence","type":"module"}
+        ]}
+      ]
+    },
+    {
+      "name": "基础设施与平台（Infrastructure & Platform）",
+      "type": "branch",
+      "children": [
+        {"name":"Web Platform","type":"project","children":[
+          {"name":"Next.js","type":"technology"},
+          {"name":"PostgreSQL","type":"technology"},
+          {"name":"Prisma","type":"technology"},
+          {"name":"Nuxt / Nitro","type":"technology"}
+        ]},
+        {"name":"运行与运维","type":"project","children":[
+          {"name":"GitHub / Git","type":"tool"},
+          {"name":"GitHub Pages","type":"platform"},
+          {"name":"CI / CD","type":"module"},
+          {"name":"Observability","type":"module"}
+        ]}
+      ]
+    },
+    {
+      "name": "OSINT 开源情报资源（OSINT Resources）",
+      "type": "branch",
+      "children": [
+        {"name":"身份 / 网络 / 网站 / 搜索","type":"collection"},
+        {"name":"社交 / 图片 / 视频 / 文档","type":"collection"},
+        {"name":"企业 / GEOINT / 威胁情报","type":"collection"},
+        {"name":"公共记录 / 档案 / 数据集","type":"collection"},
+        {"name":"工具 / 框架 / 开源项目","type":"collection"}
+      ]
+    }
+  ]
+}
