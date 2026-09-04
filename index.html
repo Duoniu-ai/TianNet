@@ -97,7 +97,7 @@ searchInput.addEventListener('keydown',e=>{if(e.key==='Enter')runSearch();});svg
 d3.json('system.json').then(systemData=>{
  root=d3.hierarchy({name:'天网互联（TIANNET）',type:'root',children:systemData.children||[]});root.x0=height/2;root.y0=0;root._children=root.children;
  root.descendants().forEach(d=>{d.id=++nodeId;if(d.depth>0){d._children=d.children;d.children=null;}});
- update(root);svg.call(zoom.transform,d3.zoomIdentity.translate(55,55).scale(1.15));const all=visibleDescendants();status.textContent=`已加载 · ${all.length} 个节点 · ${all.filter(d=>d.data.type==='branch').length} 个分支 · ${all.filter(d=>d.data.type==='project').length} 个项目`;
+ update(root);const initialScale=1.15;const initialTx=width/2;const initialTy=(height/2)-(height/2*initialScale);svg.call(zoom.transform,d3.zoomIdentity.translate(initialTx,initialTy).scale(initialScale));const all=visibleDescendants();status.textContent=`已加载 · ${all.length} 个节点 · ${all.filter(d=>d.data.type==='branch').length} 个分支 · ${all.filter(d=>d.data.type==='project').length} 个项目`;
 }).catch(e=>{console.error(e);status.textContent='加载失败：请确认 system.json 正常。';});
 })();
 </script>
