@@ -1,110 +1,110 @@
 {
-  "name": "TianNet 天网互联",
+  "name": "天网 TIANNET",
   "type": "folder",
   "children": [
-    { "name": "Username 用户名", "type": "folder", "children": [
-      { "name": "Namechk (R)", "type": "url", "url": "https://namechk.com/" },
-      { "name": "WhatsMyName", "type": "url", "url": "https://whatsmyname.app/" },
-      { "name": "Sherlock (T)", "type": "url", "url": "https://github.com/sherlock-project/sherlock" },
-      { "name": "Social-Searcher", "type": "url", "url": "https://www.social-searcher.com/" }
+    { "name": "用户名（Username）", "type": "folder", "children": [
+      { "name": "Namechk（用户名检查）", "type": "url", "url": "https://namechk.com/" },
+      { "name": "WhatsMyName（用户名查询）", "type": "url", "url": "https://whatsmyname.app/" },
+      { "name": "Sherlock（用户名侦查）", "type": "url", "url": "https://github.com/sherlock-project/sherlock" },
+      { "name": "Social-Searcher（社交搜索）", "type": "url", "url": "https://www.social-searcher.com/" }
     ]},
-    { "name": "Email Address 邮箱", "type": "folder", "children": [
-      { "name": "Hunter.io (R)", "type": "url", "url": "https://hunter.io/" },
-      { "name": "EmailRep", "type": "url", "url": "https://emailrep.io/" },
-      { "name": "Have I Been Pwned", "type": "url", "url": "https://haveibeenpwned.com/" },
-      { "name": "Epieos (R)", "type": "url", "url": "https://epieos.com/" }
+    { "name": "邮箱地址（Email Address）", "type": "folder", "children": [
+      { "name": "Hunter.io（邮箱查找）", "type": "url", "url": "https://hunter.io/" },
+      { "name": "EmailRep（邮箱信誉）", "type": "url", "url": "https://emailrep.io/" },
+      { "name": "Have I Been Pwned（账号泄露查询）", "type": "url", "url": "https://haveibeenpwned.com/" },
+      { "name": "Epieos（邮箱情报）", "type": "url", "url": "https://epieos.com/" }
     ]},
-    { "name": "Domain Names 域名", "type": "folder", "children": [
-      { "name": "WHOIS Lookup", "type": "url", "url": "https://whois.domaintools.com/" },
-      { "name": "DNSdumpster", "type": "url", "url": "https://dnsdumpster.com/" },
-      { "name": "SecurityTrails (R)", "type": "url", "url": "https://securitytrails.com/" },
-      { "name": "crt.sh 证书透明度", "type": "url", "url": "https://crt.sh/" },
-      { "name": "Shodan (R)", "type": "url", "url": "https://www.shodan.io/" }
+    { "name": "域名（Domain Names）", "type": "folder", "children": [
+      { "name": "WHOIS 查询", "type": "url", "url": "https://whois.domaintools.com/" },
+      { "name": "DNSdumpster（DNS 信息收集）", "type": "url", "url": "https://dnsdumpster.com/" },
+      { "name": "SecurityTrails（域名与 DNS 情报）", "type": "url", "url": "https://securitytrails.com/" },
+      { "name": "crt.sh（证书透明度）", "type": "url", "url": "https://crt.sh/" },
+      { "name": "Shodan（互联网设备搜索）", "type": "url", "url": "https://www.shodan.io/" }
     ]},
-    { "name": "IP Addresses IP地址", "type": "folder", "children": [
-      { "name": "IPinfo", "type": "url", "url": "https://ipinfo.io/" },
-      { "name": "AbuseIPDB (R)", "type": "url", "url": "https://www.abuseipdb.com/" },
-      { "name": "BGP.he.net", "type": "url", "url": "https://bgp.he.net/" },
-      { "name": "VirusTotal (R)", "type": "url", "url": "https://www.virustotal.com/" }
+    { "name": "IP 地址（IP Addresses）", "type": "folder", "children": [
+      { "name": "IPinfo（IP 情报）", "type": "url", "url": "https://ipinfo.io/" },
+      { "name": "AbuseIPDB（恶意 IP 查询）", "type": "url", "url": "https://www.abuseipdb.com/" },
+      { "name": "BGP.he.net（BGP / ASN 查询）", "type": "url", "url": "https://bgp.he.net/" },
+      { "name": "VirusTotal（威胁情报）", "type": "url", "url": "https://www.virustotal.com/" }
     ]},
-    { "name": "URLs 链接", "type": "folder", "children": [
-      { "name": "URLScan.io", "type": "url", "url": "https://urlscan.io/" },
-      { "name": "Wayback Machine 网页存档", "type": "url", "url": "https://web.archive.org/" },
-      { "name": "Archive.today", "type": "url", "url": "https://archive.ph/" }
+    { "name": "链接（URLs）", "type": "folder", "children": [
+      { "name": "URLScan.io（网址扫描）", "type": "url", "url": "https://urlscan.io/" },
+      { "name": "Wayback Machine（网页存档）", "type": "url", "url": "https://web.archive.org/" },
+      { "name": "Archive.today（网页快照）", "type": "url", "url": "https://archive.ph/" }
     ]},
-    { "name": "Social Networks 社交网络", "type": "folder", "children": [
-      { "name": "Social Bearing (Twitter/X)", "type": "url", "url": "https://socialbearing.com/" },
-      { "name": "TikTok 在线查看器", "type": "url", "url": "https://www.tikwm.com/" },
-      { "name": "Reddit 用户分析", "type": "url", "url": "https://www.redditcommentsearch.com/" }
+    { "name": "社交网络（Social Networks）", "type": "folder", "children": [
+      { "name": "Social Bearing（社交账号分析）", "type": "url", "url": "https://socialbearing.com/" },
+      { "name": "TikTok 查看工具", "type": "url", "url": "https://www.tikwm.com/" },
+      { "name": "Reddit 用户搜索", "type": "url", "url": "https://www.redditcommentsearch.com/" }
     ]},
-    { "name": "Images 图片", "type": "folder", "children": [
+    { "name": "图片（Images）", "type": "folder", "children": [
       { "name": "Google 图片搜索", "type": "url", "url": "https://images.google.com/" },
-      { "name": "TinEye 以图搜图", "type": "url", "url": "https://tineye.com/" },
-      { "name": "Yandex Images", "type": "url", "url": "https://yandex.com/images/" },
-      { "name": "FotoForensics (元数据/ELA)", "type": "url", "url": "https://fotoforensics.com/" },
-      { "name": "EXIF.tools", "type": "url", "url": "https://exif.tools/" }
+      { "name": "TinEye（以图搜图）", "type": "url", "url": "https://tineye.com/" },
+      { "name": "Yandex 图片搜索", "type": "url", "url": "https://yandex.com/images/" },
+      { "name": "FotoForensics（图片取证）", "type": "url", "url": "https://fotoforensics.com/" },
+      { "name": "EXIF.tools（图片元数据）", "type": "url", "url": "https://exif.tools/" }
     ]},
-    { "name": "Video & Audio 音视频", "type": "folder", "children": [
-      { "name": "YouTube 元数据查看", "type": "url", "url": "https://mattw.io/youtube-metadata/" },
-      { "name": "InVID 视频验证插件", "type": "url", "url": "https://www.invid-project.eu/tools-and-services/invid-verification-plugin/" }
+    { "name": "音视频（Video & Audio）", "type": "folder", "children": [
+      { "name": "YouTube 元数据查询", "type": "url", "url": "https://mattw.io/youtube-metadata/" },
+      { "name": "InVID（视频验证工具）", "type": "url", "url": "https://www.invid-project.eu/tools-and-services/invid-verification-plugin/" }
     ]},
-    { "name": "Documents 文档", "type": "folder", "children": [
-      { "name": "ExifTool (T)", "type": "url", "url": "https://exiftool.org/" },
-      { "name": "Google Dork: 文件搜索 (D)", "type": "url", "url": "https://www.google.com/search?q=filetype%3Apdf" }
+    { "name": "文档（Documents）", "type": "folder", "children": [
+      { "name": "ExifTool（文件元数据）", "type": "url", "url": "https://exiftool.org/" },
+      { "name": "Google Dork（文件类型搜索）", "type": "url", "url": "https://www.google.com/search?q=filetype%3Apdf" }
     ]},
-    { "name": "Data Leaks 数据泄露", "type": "folder", "children": [
-      { "name": "Have I Been Pwned", "type": "url", "url": "https://haveibeenpwned.com/" },
-      { "name": "DeHashed (R)", "type": "url", "url": "https://www.dehashed.com/" },
-      { "name": "LeakCheck (R)", "type": "url", "url": "https://leakcheck.io/" }
+    { "name": "数据泄露（Data Leaks）", "type": "folder", "children": [
+      { "name": "Have I Been Pwned（泄露查询）", "type": "url", "url": "https://haveibeenpwned.com/" },
+      { "name": "DeHashed（泄露数据查询）", "type": "url", "url": "https://www.dehashed.com/" },
+      { "name": "LeakCheck（泄露数据查询）", "type": "url", "url": "https://leakcheck.io/" }
     ]},
-    { "name": "People Search 人员搜索", "type": "folder", "children": [
-      { "name": "TruePeopleSearch", "type": "url", "url": "https://www.truepeoplesearch.com/" },
-      { "name": "WhitePages (R)", "type": "url", "url": "https://www.whitepages.com/" },
-      { "name": "FastPeopleSearch", "type": "url", "url": "https://www.fastpeoplesearch.com/" }
+    { "name": "人员搜索（People Search）", "type": "folder", "children": [
+      { "name": "TruePeopleSearch（人员搜索）", "type": "url", "url": "https://www.truepeoplesearch.com/" },
+      { "name": "WhitePages（人员与地址信息）", "type": "url", "url": "https://www.whitepages.com/" },
+      { "name": "FastPeopleSearch（人员搜索）", "type": "url", "url": "https://www.fastpeoplesearch.com/" }
     ]},
-    { "name": "Companies 企业信息", "type": "folder", "children": [
-      { "name": "OpenCorporates", "type": "url", "url": "https://opencorporates.com/" },
-      { "name": "企查查 (R)", "type": "url", "url": "https://www.qcc.com/" },
-      { "name": "天眼查 (R)", "type": "url", "url": "https://www.tianyancha.com/" },
-      { "name": "SEC EDGAR 上市公司财报", "type": "url", "url": "https://www.sec.gov/edgar" }
+    { "name": "企业信息（Companies）", "type": "folder", "children": [
+      { "name": "OpenCorporates（全球企业信息）", "type": "url", "url": "https://opencorporates.com/" },
+      { "name": "企查查（企业信息）", "type": "url", "url": "https://www.qcc.com/" },
+      { "name": "天眼查（企业信息）", "type": "url", "url": "https://www.tianyancha.com/" },
+      { "name": "SEC EDGAR（美国公司文件）", "type": "url", "url": "https://www.sec.gov/edgar" }
     ]},
-    { "name": "Geo Location 地理定位", "type": "folder", "children": [
-      { "name": "Google Maps", "type": "url", "url": "https://maps.google.com/" },
-      { "name": "Bellingcat OpenStreetMap 搜索", "type": "url", "url": "https://osm-search.bellingcat.com/" },
-      { "name": "SunCalc 太阳角度", "type": "url", "url": "https://www.suncalc.org/" },
-      { "name": "GeoSpy.ai (R)", "type": "url", "url": "https://geospy.ai/" }
+    { "name": "地理位置（Geo Location）", "type": "folder", "children": [
+      { "name": "Google 地图", "type": "url", "url": "https://maps.google.com/" },
+      { "name": "Bellingcat OSM 搜索", "type": "url", "url": "https://osm-search.bellingcat.com/" },
+      { "name": "SunCalc（太阳角度）", "type": "url", "url": "https://www.suncalc.org/" },
+      { "name": "GeoSpy.ai（地理定位）", "type": "url", "url": "https://geospy.ai/" }
     ]},
-    { "name": "Threat Intelligence 威胁情报", "type": "folder", "children": [
-      { "name": "VirusTotal (R)", "type": "url", "url": "https://www.virustotal.com/" },
-      { "name": "AlienVault OTX", "type": "url", "url": "https://otx.alienvault.com/" },
-      { "name": "MISP Project (T)", "type": "url", "url": "https://www.misp-project.org/" },
-      { "name": "MITRE ATT&CK", "type": "url", "url": "https://attack.mitre.org/" }
+    { "name": "威胁情报（Threat Intelligence）", "type": "folder", "children": [
+      { "name": "VirusTotal（威胁情报）", "type": "url", "url": "https://www.virustotal.com/" },
+      { "name": "AlienVault OTX（威胁情报）", "type": "url", "url": "https://otx.alienvault.com/" },
+      { "name": "MISP Project（威胁情报平台）", "type": "url", "url": "https://www.misp-project.org/" },
+      { "name": "MITRE ATT&CK（攻击知识库）", "type": "url", "url": "https://attack.mitre.org/" }
     ]},
-    { "name": "Dark Web 暗网", "type": "folder", "children": [
-      { "name": "Ahmia 暗网搜索引擎", "type": "url", "url": "https://ahmia.fi/" },
-      { "name": "Dark.fail 站点可用性", "type": "url", "url": "https://dark.fail/" }
+    { "name": "暗网（Dark Web）", "type": "folder", "children": [
+      { "name": "Ahmia（暗网搜索）", "type": "url", "url": "https://ahmia.fi/" },
+      { "name": "Dark.fail（暗网站点状态）", "type": "url", "url": "https://dark.fail/" }
     ]},
-    { "name": "Digital Currency 数字货币", "type": "folder", "children": [
-      { "name": "Blockchain.com 浏览器", "type": "url", "url": "https://www.blockchain.com/explorer" },
-      { "name": "Etherscan", "type": "url", "url": "https://etherscan.io/" },
-      { "name": "WalletExplorer", "type": "url", "url": "https://www.walletexplorer.com/" }
+    { "name": "数字货币（Digital Currency）", "type": "folder", "children": [
+      { "name": "Blockchain.com（区块链浏览器）", "type": "url", "url": "https://www.blockchain.com/explorer" },
+      { "name": "Etherscan（以太坊浏览器）", "type": "url", "url": "https://etherscan.io/" },
+      { "name": "WalletExplorer（钱包分析）", "type": "url", "url": "https://www.walletexplorer.com/" }
     ]},
-    { "name": "Vehicles 车辆", "type": "folder", "children": [
-      { "name": "VINCheck.info", "type": "url", "url": "https://vincheck.info/" },
-      { "name": "NHTSA VIN 解码", "type": "url", "url": "https://vpic.nhtsa.dot.gov/" }
+    { "name": "车辆（Vehicles）", "type": "folder", "children": [
+      { "name": "VINCheck.info（VIN 查询）", "type": "url", "url": "https://vincheck.info/" },
+      { "name": "NHTSA VIN 解码器", "type": "url", "url": "https://vpic.nhtsa.dot.gov/" }
     ]},
-    { "name": "Public Records 公共记录", "type": "folder", "children": [
-      { "name": "CourtListener 法院文书", "type": "url", "url": "https://www.courtlistener.com/" },
-      { "name": "GovInfo 政府文件", "type": "url", "url": "https://www.govinfo.gov/" }
+    { "name": "公共记录（Public Records）", "type": "folder", "children": [
+      { "name": "CourtListener（法院文书）", "type": "url", "url": "https://www.courtlistener.com/" },
+      { "name": "GovInfo（美国政府文件）", "type": "url", "url": "https://www.govinfo.gov/" }
     ]},
-    { "name": "Archives 档案存档", "type": "folder", "children": [
-      { "name": "Internet Archive", "type": "url", "url": "https://archive.org/" },
-      { "name": "Wayback Machine", "type": "url", "url": "https://web.archive.org/" },
-      { "name": "CachedView", "type": "url", "url": "https://cachedview.nl/" }
+    { "name": "档案存档（Archives）", "type": "folder", "children": [
+      { "name": "Internet Archive（互联网档案）", "type": "url", "url": "https://archive.org/" },
+      { "name": "Wayback Machine（网页时光机）", "type": "url", "url": "https://web.archive.org/" },
+      { "name": "CachedView（缓存页面）", "type": "url", "url": "https://cachedview.nl/" }
     ]},
-    { "name": "Tools 综合工具", "type": "folder", "children": [
-      { "name": "Maltego (T)", "type": "url", "url": "https://www.maltego.com/" },
-      { "name": "OSINT Framework 原始项目", "type": "url", "url": "https://osintframework.com/" },
+    { "name": "综合工具（Tools）", "type": "folder", "children": [
+      { "name": "Maltego（关联分析）", "type": "url", "url": "https://www.maltego.com/" },
+      { "name": "OSINT Framework（开源情报框架）", "type": "url", "url": "https://osintframework.com/" },
       { "name": "Bellingcat 工具箱", "type": "url", "url": "https://bellingcat.gitbook.io/toolkit" }
     ]}
   ]
