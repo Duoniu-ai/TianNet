@@ -24,6 +24,7 @@ body:before{content:"";position:fixed;inset:0;pointer-events:none;opacity:.28;ba
 .node.root circle,.node.system-root circle{fill:#20262d;stroke:#929ba6;stroke-width:2px}
 .node.branch circle{fill:#23282f;stroke:#858e99;stroke-width:2px}
 .node.project rect{fill:#1a2026;stroke:#697581;stroke-width:1.5px}
+.node.project.completed rect{fill:#20272d;stroke:#8f9aa6;stroke-width:1.7px}
 .node.module circle,.node.tool circle,.node.search circle,.node.database circle,.node.dataset circle,.node.archive circle,.node.platform circle,.node.framework circle,.node.toolkit circle,.node.collection circle,.node.explorer circle,.node.technology circle,.node.reference circle{fill:#242b31;stroke:#66717d;stroke-width:1px}
 .node text{font-size:10px;fill:#9aa3ad;dominant-baseline:middle;user-select:none}
 .node.root text{font-size:20px;fill:#d0d5db;font-weight:700;letter-spacing:.2px}
@@ -34,18 +35,19 @@ body:before{content:"";position:fixed;inset:0;pointer-events:none;opacity:.28;ba
 .node:hover circle,.node:hover rect{stroke:#a4adb7}
 .node.match text{fill:#d3d7dc;font-weight:600}
 .node.match circle,.node.match rect{stroke:#aeb6bf!important}
+.checkmark{font-size:10px;font-weight:700;fill:#c9d0d8;text-anchor:middle;dominant-baseline:middle;pointer-events:none}
 .count-badge{font-size:8px;fill:#69737e;dominant-baseline:middle;pointer-events:none}
 #tooltip{position:fixed;display:none;z-index:20;pointer-events:none;background:#171c22;border:1px solid #343c45;border-radius:5px;padding:7px 10px;font-size:11px;color:#aeb6c0;max-width:360px;box-shadow:0 8px 20px rgba(0,0,0,.3)}
 #tooltip a{color:#8d99a6;word-break:break-all}
 #status{position:fixed;left:14px;bottom:12px;z-index:10;padding:5px 8px;background:rgba(20,25,31,.9);border:1px solid #303740;border-radius:5px;font-size:10px;color:#68727d}
-@media (max-width:900px){#legend{display:none}#header{gap:9px;padding:8px 11px}#header h1{font-size:14px}.node text{font-size:9px}.node.root text{font-size:16px}.node.branch text{font-size:11px}.node.project text{font-size:10px}}
+@media (max-width:900px){#legend{display:none}#header{gap:9px;padding:8px 11px}#header h1{font-size:14px}.node text{font-size:9px}.node.root text{font-size:16px}.node.branch text{font-size:11px}.node.project text{font-size:10px}.checkmark{font-size:9px}}
 </style>
 </head>
 <body>
 <div id="header">
 <h1>TIANNET 天网</h1>
 <input id="search" type="text" placeholder="搜索系统、分支、项目或工具…（回车定位）" autocomplete="off">
-<div id="legend">分支 · 项目 · 模块/资源 · 点击展开 · 滚轮缩放 · 拖拽平移</div>
+<div id="legend">分支 · 项目 · 模块/资源 · ✓ 已完成 · 点击展开 · 滚轮缩放 · 拖拽平移</div>
 </div>
 <svg id="tree" aria-label="TIANNET 天网系统知识网络"></svg>
 <div id="tooltip"></div>
@@ -64,7 +66,7 @@ const tree=d3.tree().nodeSize([ROW_GAP,DEPTH_GAP]);
 function diagonal(s,t){const mid=(s.y+t.y)/2;return `M${s.y},${s.x}C${mid},${s.x} ${mid},${t.x} ${t.y},${t.x}`;}
 function branchDisplayName(name){return String(name||'').replace(/\s*（[^）]*）\s*$/,'').replace(/\s*\([^)]*\)\s*$/,'').trim();}
 function displayName(d){return d.depth===1 ? branchDisplayName(d.data.name) : d.data.name;}
-function nodeClass(d){return `node ${d.data.type||'category'}${d.data.url?' leaf':''}${matches.includes(d)?' match':''}`;}
+function nodeClass(d){return `node ${d.data.type||'category'}${d.data.status==='completed'?' completed':''}${d.data.url?' leaf':''}${matches.includes(d)?' match':''}`;}
 function visibleDescendants(){return root.descendants();}
 function update(source){
  tree(root);
@@ -75,9 +77,10 @@ function update(source){
   .on('click',(event,d)=>{event.stopPropagation();if(d.data.url){window.open(d.data.url,'_blank','noopener,noreferrer');return;}if(d.children){d._children=d.children;d.children=null;}else if(d._children){d.children=d._children;}update(d);})
   .on('mousemove',(event,d)=>{if(!d.data.url){tooltip.style.display='none';return;}tooltip.style.display='block';tooltip.style.left=`${Math.min(event.clientX+14,window.innerWidth-380)}px`;tooltip.style.top=`${Math.min(event.clientY+14,window.innerHeight-100)}px`;tooltip.innerHTML=`<strong>${escapeHtml(d.data.name)}</strong><br><a href="${escapeAttr(d.data.url)}">${escapeHtml(d.data.url)}</a>`;})
   .on('mouseleave',()=>tooltip.style.display='none');
- nodeEnter.each(function(d){const n=d3.select(this);if(d.data.type==='project')n.append('rect').attr('x',-7).attr('y',-7).attr('width',14).attr('height',14).attr('rx',3);else n.append('circle').attr('r',d.data.type==='branch'?9:(d.data.type==='root'||d.data.type==='system-root'?9:4));n.append('text').text(displayName(d));if(d.data.children||d.data._children)n.append('text').attr('class','count-badge').text(d=>(d.data.children||d.data._children||[]).length);});
+ nodeEnter.each(function(d){const n=d3.select(this);if(d.data.type==='project')n.append('rect').attr('x',-7).attr('y',-7).attr('width',14).attr('height',14).attr('rx',3);else n.append('circle').attr('r',d.data.type==='branch'?9:(d.data.type==='root'||d.data.type==='system-root'?9:4));if(d.data.type==='project')n.append('text').attr('class','checkmark');n.append('text').attr('class','node-label').text(displayName(d));if(d.data.children||d.data._children)n.append('text').attr('class','count-badge').text(d=>(d.data.children||d.data._children||[]).length);});
  const nodeUpdate=nodeEnter.merge(nodeSelection).transition().duration(260).attr('transform',d=>`translate(${d.y},${d.x})`).attr('class',nodeClass);
- nodeUpdate.select('text:not(.count-badge)').text(displayName).attr('x',d=>d.data.type==='branch'||d.data.type==='project'?-15:((d.children||d._children)?-12:11)).attr('y',0).attr('text-anchor',d=>(d.data.type==='branch'||d.data.type==='project'||d.children||d._children)?'end':'start');
+ nodeUpdate.select('.node-label').text(displayName).attr('x',d=>d.data.type==='branch'||d.data.type==='project'?-15:((d.children||d._children)?-12:11)).attr('y',0).attr('text-anchor',d=>(d.data.type==='branch'||d.data.type==='project'||d.children||d._children)?'end':'start');
+ nodeUpdate.select('.checkmark').text(d=>d.data.status==='completed'?'✓':'').attr('x',0).attr('y',0);
  nodeUpdate.select('.count-badge').attr('x',d=>d.data.type==='branch'||d.data.type==='project'?14:9).attr('y',0);
  nodeSelection.exit().transition().duration(220).attr('transform',`translate(${source.y},${source.x})`).remove();
  const linkSelection=g.selectAll('path.link').data(links,d=>d.target.id);
