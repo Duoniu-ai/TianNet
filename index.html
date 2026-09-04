@@ -8,175 +8,102 @@
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
 html,body{width:100%;height:100%;overflow:hidden}
-body{background:#0b0f14;color:#c9d1d9;font-family:"Segoe UI",Arial,"Noto Sans SC","Microsoft YaHei",sans-serif}
-body:before{content:"";position:fixed;inset:0;pointer-events:none;background-image:radial-gradient(rgba(139,148,158,.18) 1px,transparent 1px);background-size:24px 24px;opacity:.32}
-#header{position:fixed;top:0;left:0;right:0;z-index:20;display:flex;align-items:center;gap:14px;padding:10px 18px;background:rgba(13,17,23,.94);border-bottom:1px solid #30363d;box-shadow:0 2px 14px rgba(0,0,0,.28);backdrop-filter:blur(8px)}
-#header h1{font-size:18px;color:#58a6ff;white-space:nowrap;letter-spacing:.2px}
-#search{flex:1;max-width:500px;padding:8px 13px;background:#0d1117;border:1px solid #30363d;border-radius:7px;color:#c9d1d9;outline:none}
-#search::placeholder{color:#6e7681}
-#search:focus{border-color:#58a6ff;box-shadow:0 0 0 3px rgba(88,166,255,.10)}
-#legend{font-size:11px;color:#8b949e;margin-left:auto;white-space:nowrap}
+body{background:#101419;color:#b7bec8;font-family:"Segoe UI",Arial,"Noto Sans SC","Microsoft YaHei",sans-serif}
+body:before{content:"";position:fixed;inset:0;pointer-events:none;opacity:.28;background-image:radial-gradient(#66707c 0.65px,transparent .65px);background-size:24px 24px}
+#header{position:fixed;top:0;left:0;right:0;z-index:10;display:flex;align-items:center;gap:14px;padding:9px 18px;background:rgba(18,23,29,.94);border-bottom:1px solid #293039;box-shadow:0 2px 12px rgba(0,0,0,.16)}
+#header h1{font-size:16px;font-weight:600;color:#aeb7c2;white-space:nowrap;letter-spacing:.2px}
+#search{flex:1;max-width:430px;padding:7px 11px;background:#0f1419;border:1px solid #303740;border-radius:5px;color:#c2c9d2;outline:none;font-size:12px}
+#search::placeholder{color:#68717c}
+#search:focus{border-color:#657180;box-shadow:0 0 0 2px rgba(120,132,146,.08)}
+#legend{font-size:11px;color:#68717c;margin-left:auto;white-space:nowrap}
 #tree{position:absolute;inset:0;width:100vw;height:100vh;cursor:grab}
 #tree:active{cursor:grabbing}
-.link{fill:none;stroke:#30363d;stroke-width:1.35px;opacity:.9;transition:stroke .2s,stroke-width .2s}
-.link.active{stroke:#58a6ff;stroke-width:2.4px;opacity:1}
-.branch-zone{fill:rgba(22,27,34,.30);stroke:#30363d;stroke-width:1;stroke-dasharray:4 7;rx:18;pointer-events:none}
-.branch-zone.active{fill:rgba(88,166,255,.035);stroke:#58a6ff;stroke-opacity:.45}
-.branch-zone-label{fill:#8b949e;font-size:10px;letter-spacing:1.2px;text-transform:uppercase;pointer-events:none}
+.link{fill:none;stroke:#3a424c;stroke-width:1.1px;stroke-opacity:.72}
+.branch-zone{fill:rgba(38,44,52,.16);stroke:#3c4651;stroke-width:1px;stroke-dasharray:5 5;rx:12;ry:12;pointer-events:none}
+.branch-zone-title{font-size:10px;fill:#707986;letter-spacing:.6px;pointer-events:none}
 .node{cursor:pointer}
-.node circle,.node rect{transition:filter .2s,stroke .2s,fill .2s}
-.node.root circle{fill:#161b22;stroke:#58a6ff;stroke-width:3px;filter:drop-shadow(0 0 7px rgba(88,166,255,.22))}
-.node.branch circle{fill:#151b27;stroke:#a371f7;stroke-width:3px;filter:drop-shadow(0 0 7px rgba(163,113,247,.16))}
-.node.branch.expanded circle{fill:#211b31;stroke-width:4px}
-.node.project rect{fill:#151a21;stroke:#58a6ff;stroke-width:1.8px;rx:7;filter:drop-shadow(0 2px 5px rgba(0,0,0,.18))}
-.node.project.expanded rect{fill:#172235;stroke-width:2.4px}
-.node.module circle,.node.tool circle,.node.search circle,.node.database circle,.node.dataset circle,.node.archive circle,.node.platform circle,.node.framework circle,.node.toolkit circle,.node.collection circle,.node.explorer circle,.node.technology circle,.node.reference circle{fill:#16251b;stroke:#2ea043;stroke-width:1.7px}
-.node text{font-size:12px;fill:#c9d1d9;dominant-baseline:middle;user-select:none;paint-order:stroke;stroke:#0b0f14;stroke-width:3px;stroke-linejoin:round}
-.node.root text{fill:#f0f6fc;font-weight:700;font-size:16px}
-.node.branch text{fill:#d2a8ff;font-weight:700;font-size:14px}
-.node.project text{fill:#79c0ff;font-weight:700;font-size:12.5px}
-.node.module text,.node.tool text{fill:#7ee787;font-size:11.5px}
-.node.leaf:hover circle{fill:#1c3324}
-.node:hover text{fill:#fff}
-.node:hover circle,.node:hover rect{filter:drop-shadow(0 0 7px rgba(88,166,255,.22))}
-.node.match text{fill:#f0b429;font-weight:700}
-.node.match circle,.node.match rect{stroke:#f0b429!important;filter:drop-shadow(0 0 8px rgba(240,180,41,.28))}
-.badge{fill:#0d1117;stroke:#30363d;stroke-width:1}
-.badge-text{fill:#8b949e;font-size:9px;font-weight:600;pointer-events:none}
-#tooltip{position:fixed;display:none;z-index:30;pointer-events:none;background:#161b22;border:1px solid #30363d;border-radius:7px;padding:9px 12px;font-size:12px;color:#c9d1d9;max-width:420px;box-shadow:0 10px 26px rgba(0,0,0,.42)}
-#tooltip a{color:#58a6ff;word-break:break-all}
-#status{position:fixed;left:15px;bottom:14px;z-index:20;padding:7px 10px;background:rgba(22,27,34,.92);border:1px solid #30363d;border-radius:7px;font-size:11px;color:#8b949e;backdrop-filter:blur(6px)}
-#hint{position:fixed;right:15px;bottom:14px;z-index:20;padding:7px 10px;background:rgba(22,27,34,.86);border:1px solid #21262d;border-radius:7px;font-size:10px;color:#6e7681}
-@media (max-width:900px){#legend{display:none}#header{gap:10px;padding:9px 12px}#header h1{font-size:16px}.node text{font-size:11px}.node.branch text{font-size:12px}.node.project text{font-size:11px}#hint{display:none}}
+.node circle{fill:#151a20;stroke:#687482;stroke-width:1.5px}
+.node.root circle,.node.system-root circle{fill:#20262d;stroke:#929ba6;stroke-width:2px}
+.node.branch circle{fill:#23282f;stroke:#858e99;stroke-width:2px}
+.node.project rect{fill:#1a2026;stroke:#697581;stroke-width:1.5px}
+.node.module circle,.node.tool circle,.node.search circle,.node.database circle,.node.dataset circle,.node.archive circle,.node.platform circle,.node.framework circle,.node.toolkit circle,.node.collection circle,.node.explorer circle,.node.technology circle,.node.reference circle{fill:#242b31;stroke:#66717d;stroke-width:1px}
+.node text{font-size:10px;fill:#9aa3ad;dominant-baseline:middle;user-select:none}
+.node.branch text{fill:#b0b7c0;font-weight:600;font-size:12px}
+.node.project text{fill:#a8b0ba;font-weight:600;font-size:11px}
+.node.module text{fill:#8d97a2}
+.node:hover text{fill:#d0d5db}
+.node:hover circle,.node:hover rect{stroke:#a4adb7}
+.node.match text{fill:#d3d7dc;font-weight:600}
+.node.match circle,.node.match rect{stroke:#aeb6bf!important}
+.count-badge{font-size:8px;fill:#69737e;dominant-baseline:middle;pointer-events:none}
+#tooltip{position:fixed;display:none;z-index:20;pointer-events:none;background:#171c22;border:1px solid #343c45;border-radius:5px;padding:7px 10px;font-size:11px;color:#aeb6c0;max-width:360px;box-shadow:0 8px 20px rgba(0,0,0,.3)}
+#tooltip a{color:#8d99a6;word-break:break-all}
+#status{position:fixed;left:14px;bottom:12px;z-index:10;padding:5px 8px;background:rgba(20,25,31,.9);border:1px solid #303740;border-radius:5px;font-size:10px;color:#68727d}
+@media (max-width:900px){#legend{display:none}#header{gap:9px;padding:8px 11px}#header h1{font-size:14px}.node text{font-size:9px}.node.branch text{font-size:11px}.node.project text{font-size:10px}}
 </style>
 </head>
 <body>
 <div id="header">
-<h1>🕸️ TIANNET 天网</h1>
+<h1>TIANNET 天网</h1>
 <input id="search" type="text" placeholder="搜索系统、分支、项目或工具…（回车定位）" autocomplete="off">
-<div id="legend">紫＝分支 · 蓝＝项目 · 绿＝能力/资源 · 点击节点展开 · 滚轮缩放 · 拖拽平移</div>
+<div id="legend">分支区域 · 项目节点 · 模块/资源 · 点击展开 · 滚轮缩放 · 拖拽平移</div>
 </div>
 <svg id="tree" aria-label="TIANNET 天网系统知识网络"></svg>
 <div id="tooltip"></div>
 <div id="status">正在加载系统与资源数据…</div>
-<div id="hint">参考 OSINT Framework 的探索式树形体验 · TIANNET 使用自己的系统分类</div>
 <script>
 (() => {
-const svg=d3.select('#tree');
-const tooltip=document.getElementById('tooltip');
-const status=document.getElementById('status');
-const searchInput=document.getElementById('search');
-const width=window.innerWidth;
-const height=Math.max(320,window.innerHeight-50);
+const svg=d3.select('#tree'),tooltip=document.getElementById('tooltip'),status=document.getElementById('status'),searchInput=document.getElementById('search');
+const width=window.innerWidth,height=Math.max(320,window.innerHeight-50);
 svg.attr('viewBox',`0 0 ${width} ${height}`);
-const g=svg.append('g').attr('transform','translate(70,70)');
-const zones=g.append('g').attr('class','zones');
-const linksLayer=g.append('g').attr('class','links-layer');
-const nodesLayer=g.append('g').attr('class','nodes-layer');
-const zoom=d3.zoom().scaleExtent([0.055,3.2]).on('zoom',event=>g.attr('transform',event.transform));
-svg.call(zoom);
-let root;
-let nodeId=0;
-let matches=[];
-let matchQuery='';
-let matchIndex=0;
-const tree=d3.tree().nodeSize([48,330]).separation((a,b)=>a.parent===b.parent?1.15:1.7);
-function diagonal(source,target){const mid=(source.y+target.y)/2;return `M${source.y},${source.x}C${mid},${source.x} ${mid},${target.x} ${target.y},${target.x}`;}
-function nodeClass(d){const state=d.children?' expanded':'';return `node ${d.data.type||'category'}${d.data.url?' leaf':''}${state}${matches.includes(d)?' match':''}`;}
-function visibleBranchZones(){
- const branches=root.children||[];
- return branches.filter(b=>b.children||b._children).map(branch=>{
-   const desc=branch.descendants();
-   const minX=Math.min(...desc.map(d=>d.x),branch.x)-34;
-   const maxX=Math.max(...desc.map(d=>d.x),branch.x)+34;
-   const minY=Math.min(...desc.map(d=>d.y),branch.y)-82;
-   const maxY=Math.max(...desc.map(d=>d.y),branch.y)+42;
-   return {branch,minX,maxX,minY,maxY};
- });
-}
+const g=svg.append('g').attr('transform','translate(55,55)');
+const zoom=d3.zoom().scaleExtent([0.05,3]).on('zoom',e=>g.attr('transform',e.transform));svg.call(zoom);
+let root,nodeId=0,matches=[],matchQuery='',matchIndex=0;
+const tree=d3.tree().nodeSize([38,300]);
+function diagonal(s,t){const mid=(s.y+t.y)/2;return `M${s.y},${s.x}C${mid},${s.x} ${mid},${t.x} ${t.y},${t.x}`;}
+function nodeClass(d){return `node ${d.data.type||'category'}${d.data.url?' leaf':''}${matches.includes(d)?' match':''}`;}
+function visibleDescendants(){return root.descendants();}
 function update(source){
  tree(root);
- root.descendants().forEach(d=>{d.y=d.depth*330;});
- const nodes=root.descendants();
- const links=root.links();
- // Branch zones: an OSINT-style visual grouping that makes a system branch an area, not just another node.
- const zoneData=visibleBranchZones();
- const zoneSel=zones.selectAll('g.branch-zone-group').data(zoneData,d=>d.branch.id);
- const zoneEnter=zoneSel.enter().append('g').attr('class','branch-zone-group');
- zoneEnter.append('rect').attr('class','branch-zone');
- zoneEnter.append('text').attr('class','branch-zone-label').text('SYSTEM BRANCH');
- const zoneUpdate=zoneEnter.merge(zoneSel).transition().duration(260);
- zoneUpdate.select('rect').attr('x',d=>d.minY).attr('y',d=>d.minX).attr('width',d=>Math.max(170,d.maxY-d.minY)).attr('height',d=>Math.max(80,d.maxX-d.minX));
- zoneUpdate.select('text').attr('x',d=>d.minY+16).attr('y',d=>d.minX+22);
- zoneSel.exit().remove();
- // Links first, nodes second.
- const linkSelection=linksLayer.selectAll('path.link').data(links,d=>d.target.id);
- const linkEnter=linkSelection.enter().append('path').attr('class','link').attr('d',()=>{const o={x:source.x0||0,y:source.y0||0};return diagonal(o,o);});
- linkEnter.merge(linkSelection).classed('active',d=>d.source.data.type==='branch'||d.target.data.type==='branch').transition().duration(260).attr('d',d=>diagonal(d.source,d.target));
- linkSelection.exit().transition().duration(200).attr('d',()=>{const o={x:source.x,y:source.y};return diagonal(o,o);}).remove();
- const nodeSelection=nodesLayer.selectAll('g.node').data(nodes,d=>d.id);
- const nodeEnter=nodeSelection.enter().append('g')
-  .attr('class',nodeClass)
-  .attr('transform',`translate(${source.y0||0},${source.x0||0})`)
-  .on('click',(event,d)=>{
-   event.stopPropagation();
-   if(d.data.url){window.open(d.data.url,'_blank','noopener,noreferrer');return;}
-   if(d.children){d._children=d.children;d.children=null;}
-   else if(d._children){d.children=d._children;}
-   update(d);
-  })
-  .on('mouseenter',(event,d)=>{
-   nodesLayer.selectAll('g.node').classed('hovered',n=>n===d);
-   linksLayer.selectAll('path.link').classed('active',l=>l.source===d||l.target===d||l.source.ancestors().includes(d)||l.target.ancestors().includes(d));
-   if(!d.data.url){tooltip.style.display='none';return;}
-   tooltip.style.display='block';
-   tooltip.style.left=`${Math.min(event.clientX+15,window.innerWidth-430)}px`;
-   tooltip.style.top=`${Math.min(event.clientY+15,window.innerHeight-125)}px`;
-   tooltip.innerHTML=`<strong>${escapeHtml(d.data.name)}</strong><br><a href="${escapeAttr(d.data.url)}">${escapeHtml(d.data.url)}</a>`;
-  })
-  .on('mousemove',event=>{if(tooltip.style.display!=='none'){tooltip.style.left=`${Math.min(event.clientX+15,window.innerWidth-430)}px`;tooltip.style.top=`${Math.min(event.clientY+15,window.innerHeight-125)}px`;}})
-  .on('mouseleave',()=>{tooltip.style.display='none';linksLayer.selectAll('path.link').classed('active',d=>d.source.data.type==='branch'||d.target.data.type==='branch');});
- nodeEnter.each(function(d){
-   const n=d3.select(this);
-   if(d.data.type==='project') n.append('rect').attr('x',-12).attr('y',-9).attr('width',24).attr('height',18).attr('rx',7);
-   else n.append('circle').attr('r',d.data.type==='branch'?13:(d.data.type==='root'||d.data.type==='system-root'?13:5));
-   if(d.data.type==='branch'||d.data.type==='project') n.append('circle').attr('class','badge').attr('cx',13).attr('cy',-13).attr('r',8);
-   if(d.data.type==='branch'||d.data.type==='project') n.append('text').attr('class','badge-text').attr('x',13).attr('y',-13).attr('text-anchor','middle');
-   n.append('text').text(d=>d.data.name);
+ root.descendants().forEach(d=>d.y=d.depth*300);
+ const nodes=root.descendants(),links=root.links();
+ // Remove old branch zones; rebuild from currently visible branch descendants.
+ g.selectAll('.branch-zone,.branch-zone-title').remove();
+ root.children&&root.children.forEach(branch=>{
+   const ds=branch.descendants(); if(!ds.length)return;
+   const minX=d3.min(ds,d=>d.x)-24,maxX=d3.max(ds,d=>d.x)+24;
+   const minY=d3.min(ds,d=>d.y)-34,maxY=d3.max(ds,d=>d.y)+34;
+   const zone=g.append('rect').attr('class','branch-zone').attr('x',minY).attr('y',minX).attr('width',Math.max(210,maxY-minY)).attr('height',Math.max(60,maxX-minX)).attr('rx',12);
+   g.append('text').attr('class','branch-zone-title').attr('x',minY+12).attr('y',minX+16).text('BRANCH');
  });
+ const nodeSelection=g.selectAll('g.node').data(nodes,d=>d.id);
+ const nodeEnter=nodeSelection.enter().append('g').attr('class',nodeClass).attr('transform',`translate(${source.y0||0},${source.x0||0})`)
+  .on('click',(event,d)=>{event.stopPropagation();if(d.data.url){window.open(d.data.url,'_blank','noopener,noreferrer');return;}if(d.children){d._children=d.children;d.children=null;}else if(d._children){d.children=d._children;}update(d);})
+  .on('mousemove',(event,d)=>{if(!d.data.url){tooltip.style.display='none';return;}tooltip.style.display='block';tooltip.style.left=`${Math.min(event.clientX+14,window.innerWidth-380)}px`;tooltip.style.top=`${Math.min(event.clientY+14,window.innerHeight-100)}px`;tooltip.innerHTML=`<strong>${escapeHtml(d.data.name)}</strong><br><a href="${escapeAttr(d.data.url)}">${escapeHtml(d.data.url)}</a>`;})
+  .on('mouseleave',()=>tooltip.style.display='none');
+ nodeEnter.each(function(d){const n=d3.select(this);if(d.data.type==='project')n.append('rect').attr('x',-7).attr('y',-7).attr('width',14).attr('height',14).attr('rx',3);else n.append('circle').attr('r',d.data.type==='branch'?9:(d.data.type==='root'||d.data.type==='system-root'?9:4));n.append('text').text(d=>d.data.name);if(d.data.children||d.data._children)n.append('text').attr('class','count-badge').text(d=>(d.data.children||d.data._children||[]).length);});
  const nodeUpdate=nodeEnter.merge(nodeSelection).transition().duration(260).attr('transform',d=>`translate(${d.y},${d.x})`).attr('class',nodeClass);
- nodeUpdate.select('.badge-text').text(d=>{const count=(d.children||d._children||[]).length;return count>99?'99+':count;});
- nodeUpdate.select('text:not(.badge-text)')
-  .attr('x',d=>d.data.type==='branch'?-20:(d.data.type==='project'?-18:((d.children||d._children)?-14:12)))
-  .attr('y',d=>d.data.type==='root'||d.data.type==='system-root'?-24:(d.data.type==='branch'||d.data.type==='project'?-19:0))
-  .attr('text-anchor',d=>(d.data.type==='root'||d.data.type==='system-root'||d.data.type==='branch'||d.data.type==='project'||d.children||d._children)?'end':'start');
- nodeSelection.exit().transition().duration(200).attr('transform',`translate(${source.y},${source.x})`).remove();
+ nodeUpdate.select('text:not(.count-badge)').attr('x',d=>d.data.type==='branch'||d.data.type==='project'?-15:((d.children||d._children)?-12:11)).attr('y',d=>(d.data.type==='branch'||d.data.type==='project')?-16:0).attr('text-anchor',d=>(d.data.type==='branch'||d.data.type==='project'||d.children||d._children)?'end':'start');
+ nodeUpdate.select('.count-badge').attr('x',d=>d.data.type==='branch'||d.data.type==='project'?14:9).attr('y',-1);
+ nodeSelection.exit().transition().duration(220).attr('transform',`translate(${source.y},${source.x})`).remove();
+ const linkSelection=g.selectAll('path.link').data(links,d=>d.target.id);
+ const linkEnter=linkSelection.enter().insert('path','g').attr('class','link').attr('d',()=>{const o={x:source.x0||0,y:source.y0||0};return diagonal(o,o);});
+ linkEnter.merge(linkSelection).transition().duration(260).attr('d',d=>diagonal(d.source,d.target));
+ linkSelection.exit().transition().duration(220).attr('d',()=>{const o={x:source.x,y:source.y};return diagonal(o,o);}).remove();
  root.descendants().forEach(d=>{d.x0=d.x;d.y0=d.y;});
 }
-function expandTo(node){let current=node.parent;while(current){if(!current.children&&current._children)current.children=current._children;current=current.parent;}}
-function focusNode(node){const scale=1.0;const tx=-node.y*scale+width/3;const ty=-node.x*scale+height/2;svg.transition().duration(550).call(zoom.transform,d3.zoomIdentity.translate(tx,ty).scale(scale));}
-function runSearch(){
- const query=searchInput.value.trim().toLowerCase();
- if(!query)return;
- if(query!==matchQuery){matchQuery=query;matches=root.descendants().filter(d=>String(d.data.name||'').toLowerCase().includes(query));matchIndex=0;}
- if(!matches.length){status.textContent=`未找到：${searchInput.value.trim()}`;update(root);return;}
- const target=matches[matchIndex%matches.length];matchIndex+=1;expandTo(target);update(target.parent||root);focusNode(target);status.textContent=`找到 ${matches.length} 项 · 当前第 ${((matchIndex-1)%matches.length)+1} 项`;
-}
-function escapeHtml(value){return String(value).replace(/[&<>'"]/g,ch=>({'&':'&amp;','<':'&lt;','>':'&gt;',"'":'&#39;','"':'&quot;'}[ch]));}
-function escapeAttr(value){return String(value).replace(/&/g,'&amp;').replace(/"/g,'&quot;');}
-searchInput.addEventListener('keydown',event=>{if(event.key==='Enter')runSearch();});
-svg.on('click',()=>{tooltip.style.display='none';});
+function expandTo(node){let p=node.parent;while(p){if(!p.children&&p._children)p.children=p._children;p=p.parent;}}
+function focusNode(node){const scale=1;const tx=-node.y*scale+width/3,ty=-node.x*scale+height/2;svg.transition().duration(450).call(zoom.transform,d3.zoomIdentity.translate(tx,ty).scale(scale));}
+function runSearch(){const q=searchInput.value.trim().toLowerCase();if(!q)return;if(q!==matchQuery){matchQuery=q;matches=root.descendants().filter(d=>String(d.data.name||'').toLowerCase().includes(q));matchIndex=0;}if(!matches.length){status.textContent=`未找到：${searchInput.value.trim()}`;update(root);return;}const target=matches[matchIndex%matches.length];matchIndex++;expandTo(target);update(target.parent||root);focusNode(target);status.textContent=`找到 ${matches.length} 项 · 当前第 ${((matchIndex-1)%matches.length)+1} 项`;}
+function escapeHtml(v){return String(v).replace(/[&<>'"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;',"'":'&#39;','"':'&quot;'}[c]));}
+function escapeAttr(v){return String(v).replace(/&/g,'&amp;').replace(/"/g,'&quot;');}
+searchInput.addEventListener('keydown',e=>{if(e.key==='Enter')runSearch();});svg.on('click',()=>tooltip.style.display='none');
 Promise.all([d3.json('system.json'),d3.json('arf.json')]).then(([systemData,osintData])=>{
  const osintBranch={name:'OSINT 开源情报资源（OSINT Resources）',type:'branch',children:osintData.children||[]};
- root=d3.hierarchy({name:'天网系统（TIANNET）',type:'root',children:[...(systemData.children||[]),osintBranch]});
- root.x0=height/2;root.y0=0;root._children=root.children;
+ root=d3.hierarchy({name:'天网系统（TIANNET）',type:'root',children:[...(systemData.children||[]),osintBranch]});root.x0=height/2;root.y0=0;root._children=root.children;
  root.descendants().forEach(d=>{d.id=++nodeId;if(d.depth>0){d._children=d.children;d.children=null;}});
- update(root);
- const all=root.descendants();
- const branchCount=all.filter(d=>d.data.type==='branch').length;
- const projectCount=all.filter(d=>d.data.type==='project').length;
- status.textContent=`已加载 · ${all.length} 个节点 · ${branchCount} 个系统分支 · ${projectCount} 个项目`;
-}).catch(error=>{console.error(error);status.textContent='加载失败：请确认 system.json 与 arf.json 正常。';});
+ update(root);const all=visibleDescendants();status.textContent=`已加载 · ${all.length} 个节点 · ${all.filter(d=>d.data.type==='branch').length} 个分支 · ${all.filter(d=>d.data.type==='project').length} 个项目`;
+}).catch(e=>{console.error(e);status.textContent='加载失败：请确认 system.json 与 arf.json 正常。';});
 })();
 </script>
 </body>
