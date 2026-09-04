@@ -1,111 +1,659 @@
 {
   "name": "天网 TIANNET",
-  "type": "folder",
+  "type": "root",
   "children": [
-    { "name": "用户名（Username）", "type": "folder", "children": [
-      { "name": "Namechk（用户名检查）", "type": "url", "url": "https://namechk.com/" },
-      { "name": "WhatsMyName（用户名查询）", "type": "url", "url": "https://whatsmyname.app/" },
-      { "name": "Sherlock（用户名侦查）", "type": "url", "url": "https://github.com/sherlock-project/sherlock" },
-      { "name": "Social-Searcher（社交搜索）", "type": "url", "url": "https://www.social-searcher.com/" }
-    ]},
-    { "name": "邮箱地址（Email Address）", "type": "folder", "children": [
-      { "name": "Hunter.io（邮箱查找）", "type": "url", "url": "https://hunter.io/" },
-      { "name": "EmailRep（邮箱信誉）", "type": "url", "url": "https://emailrep.io/" },
-      { "name": "Have I Been Pwned（账号泄露查询）", "type": "url", "url": "https://haveibeenpwned.com/" },
-      { "name": "Epieos（邮箱情报）", "type": "url", "url": "https://epieos.com/" }
-    ]},
-    { "name": "域名（Domain Names）", "type": "folder", "children": [
-      { "name": "WHOIS 查询", "type": "url", "url": "https://whois.domaintools.com/" },
-      { "name": "DNSdumpster（DNS 信息收集）", "type": "url", "url": "https://dnsdumpster.com/" },
-      { "name": "SecurityTrails（域名与 DNS 情报）", "type": "url", "url": "https://securitytrails.com/" },
-      { "name": "crt.sh（证书透明度）", "type": "url", "url": "https://crt.sh/" },
-      { "name": "Shodan（互联网设备搜索）", "type": "url", "url": "https://www.shodan.io/" }
-    ]},
-    { "name": "IP 地址（IP Addresses）", "type": "folder", "children": [
-      { "name": "IPinfo（IP 情报）", "type": "url", "url": "https://ipinfo.io/" },
-      { "name": "AbuseIPDB（恶意 IP 查询）", "type": "url", "url": "https://www.abuseipdb.com/" },
-      { "name": "BGP.he.net（BGP / ASN 查询）", "type": "url", "url": "https://bgp.he.net/" },
-      { "name": "VirusTotal（威胁情报）", "type": "url", "url": "https://www.virustotal.com/" }
-    ]},
-    { "name": "链接（URLs）", "type": "folder", "children": [
-      { "name": "URLScan.io（网址扫描）", "type": "url", "url": "https://urlscan.io/" },
-      { "name": "Wayback Machine（网页存档）", "type": "url", "url": "https://web.archive.org/" },
-      { "name": "Archive.today（网页快照）", "type": "url", "url": "https://archive.ph/" }
-    ]},
-    { "name": "社交网络（Social Networks）", "type": "folder", "children": [
-      { "name": "Social Bearing（社交账号分析）", "type": "url", "url": "https://socialbearing.com/" },
-      { "name": "TikTok 查看工具", "type": "url", "url": "https://www.tikwm.com/" },
-      { "name": "Reddit 用户搜索", "type": "url", "url": "https://www.redditcommentsearch.com/" }
-    ]},
-    { "name": "图片（Images）", "type": "folder", "children": [
-      { "name": "Google 图片搜索", "type": "url", "url": "https://images.google.com/" },
-      { "name": "TinEye（以图搜图）", "type": "url", "url": "https://tineye.com/" },
-      { "name": "Yandex 图片搜索", "type": "url", "url": "https://yandex.com/images/" },
-      { "name": "FotoForensics（图片取证）", "type": "url", "url": "https://fotoforensics.com/" },
-      { "name": "EXIF.tools（图片元数据）", "type": "url", "url": "https://exif.tools/" }
-    ]},
-    { "name": "音视频（Video & Audio）", "type": "folder", "children": [
-      { "name": "YouTube 元数据查询", "type": "url", "url": "https://mattw.io/youtube-metadata/" },
-      { "name": "InVID（视频验证工具）", "type": "url", "url": "https://www.invid-project.eu/tools-and-services/invid-verification-plugin/" }
-    ]},
-    { "name": "文档（Documents）", "type": "folder", "children": [
-      { "name": "ExifTool（文件元数据）", "type": "url", "url": "https://exiftool.org/" },
-      { "name": "Google Dork（文件类型搜索）", "type": "url", "url": "https://www.google.com/search?q=filetype%3Apdf" }
-    ]},
-    { "name": "数据泄露（Data Leaks）", "type": "folder", "children": [
-      { "name": "Have I Been Pwned（泄露查询）", "type": "url", "url": "https://haveibeenpwned.com/" },
-      { "name": "DeHashed（泄露数据查询）", "type": "url", "url": "https://www.dehashed.com/" },
-      { "name": "LeakCheck（泄露数据查询）", "type": "url", "url": "https://leakcheck.io/" }
-    ]},
-    { "name": "人员搜索（People Search）", "type": "folder", "children": [
-      { "name": "TruePeopleSearch（人员搜索）", "type": "url", "url": "https://www.truepeoplesearch.com/" },
-      { "name": "WhitePages（人员与地址信息）", "type": "url", "url": "https://www.whitepages.com/" },
-      { "name": "FastPeopleSearch（人员搜索）", "type": "url", "url": "https://www.fastpeoplesearch.com/" }
-    ]},
-    { "name": "企业信息（Companies）", "type": "folder", "children": [
-      { "name": "OpenCorporates（全球企业信息）", "type": "url", "url": "https://opencorporates.com/" },
-      { "name": "企查查（企业信息）", "type": "url", "url": "https://www.qcc.com/" },
-      { "name": "天眼查（企业信息）", "type": "url", "url": "https://www.tianyancha.com/" },
-      { "name": "SEC EDGAR（美国公司文件）", "type": "url", "url": "https://www.sec.gov/edgar" }
-    ]},
-    { "name": "地理位置（Geo Location）", "type": "folder", "children": [
-      { "name": "Google 地图", "type": "url", "url": "https://maps.google.com/" },
-      { "name": "Bellingcat OSM 搜索", "type": "url", "url": "https://osm-search.bellingcat.com/" },
-      { "name": "SunCalc（太阳角度）", "type": "url", "url": "https://www.suncalc.org/" },
-      { "name": "GeoSpy.ai（地理定位）", "type": "url", "url": "https://geospy.ai/" }
-    ]},
-    { "name": "威胁情报（Threat Intelligence）", "type": "folder", "children": [
-      { "name": "VirusTotal（威胁情报）", "type": "url", "url": "https://www.virustotal.com/" },
-      { "name": "AlienVault OTX（威胁情报）", "type": "url", "url": "https://otx.alienvault.com/" },
-      { "name": "MISP Project（威胁情报平台）", "type": "url", "url": "https://www.misp-project.org/" },
-      { "name": "MITRE ATT&CK（攻击知识库）", "type": "url", "url": "https://attack.mitre.org/" }
-    ]},
-    { "name": "暗网（Dark Web）", "type": "folder", "children": [
-      { "name": "Ahmia（暗网搜索）", "type": "url", "url": "https://ahmia.fi/" },
-      { "name": "Dark.fail（暗网站点状态）", "type": "url", "url": "https://dark.fail/" }
-    ]},
-    { "name": "数字货币（Digital Currency）", "type": "folder", "children": [
-      { "name": "Blockchain.com（区块链浏览器）", "type": "url", "url": "https://www.blockchain.com/explorer" },
-      { "name": "Etherscan（以太坊浏览器）", "type": "url", "url": "https://etherscan.io/" },
-      { "name": "WalletExplorer（钱包分析）", "type": "url", "url": "https://www.walletexplorer.com/" }
-    ]},
-    { "name": "车辆（Vehicles）", "type": "folder", "children": [
-      { "name": "VINCheck.info（VIN 查询）", "type": "url", "url": "https://vincheck.info/" },
-      { "name": "NHTSA VIN 解码器", "type": "url", "url": "https://vpic.nhtsa.dot.gov/" }
-    ]},
-    { "name": "公共记录（Public Records）", "type": "folder", "children": [
-      { "name": "CourtListener（法院文书）", "type": "url", "url": "https://www.courtlistener.com/" },
-      { "name": "GovInfo（美国政府文件）", "type": "url", "url": "https://www.govinfo.gov/" }
-    ]},
-    { "name": "档案存档（Archives）", "type": "folder", "children": [
-      { "name": "Internet Archive（互联网档案）", "type": "url", "url": "https://archive.org/" },
-      { "name": "Wayback Machine（网页时光机）", "type": "url", "url": "https://web.archive.org/" },
-      { "name": "CachedView（缓存页面）", "type": "url", "url": "https://cachedview.nl/" }
-    ]},
-    { "name": "综合工具（Tools）", "type": "folder", "children": [
-      { "name": "Maltego（关联分析）", "type": "url", "url": "https://www.maltego.com/" },
-      { "name": "OSINT Framework（开源情报框架）", "type": "url", "url": "https://osintframework.com/" },
-      { "name": "Bellingcat 工具箱", "type": "url", "url": "https://bellingcat.gitbook.io/toolkit" }
-    ]}
+    {
+      "name": "身份与账号（Identity）",
+      "type": "category",
+      "children": [
+        {
+          "name": "用户名（Username）",
+          "type": "category",
+          "children": [
+            {"name":"Namechk（用户名检查）","type":"tool","url":"https://namechk.com/"},
+            {"name":"WhatsMyName（用户名查询）","type":"tool","url":"https://whatsmyname.app/"},
+            {"name":"Sherlock（跨平台用户名搜索）","type":"tool","url":"https://github.com/sherlock-project/sherlock"},
+            {"name":"Blackbird（用户名搜索）","type":"tool","url":"https://github.com/p1ngul1n0/blackbird"}
+          ]
+        },
+        {
+          "name": "邮箱（Email）",
+          "type": "category",
+          "children": [
+            {"name":"Hunter（邮箱查找）","type":"tool","url":"https://hunter.io/"},
+            {"name":"Epieos（邮箱情报）","type":"tool","url":"https://epieos.com/"},
+            {"name":"EmailRep（邮箱信誉）","type":"tool","url":"https://emailrep.io/"},
+            {"name":"Have I Been Pwned（泄露查询）","type":"tool","url":"https://haveibeenpwned.com/"}
+          ]
+        },
+        {
+          "name": "电话（Phone）",
+          "type": "category",
+          "children": [
+            {"name":"PhoneInfoga（电话 OSINT）","type":"tool","url":"https://github.com/sundowndev/phoneinfoga"},
+            {"name":"NumVerify（号码验证 API）","type":"tool","url":"https://numverify.com/"},
+            {"name":"Truecaller（号码识别）","type":"tool","url":"https://www.truecaller.com/"}
+          ]
+        },
+        {
+          "name": "人员搜索（People Search）",
+          "type": "category",
+          "children": [
+            {"name":"TruePeopleSearch","type":"tool","url":"https://www.truepeoplesearch.com/"},
+            {"name":"Whitepages","type":"tool","url":"https://www.whitepages.com/"},
+            {"name":"FastPeopleSearch","type":"tool","url":"https://www.fastpeoplesearch.com/"}
+          ]
+        }
+      ]
+    },
+    {
+      "name": "网络与基础设施（Network & Infrastructure）",
+      "type": "category",
+      "children": [
+        {
+          "name": "域名（Domains）",
+          "type": "category",
+          "children": [
+            {"name":"WHOIS / DomainTools","type":"tool","url":"https://whois.domaintools.com/"},
+            {"name":"SecurityTrails（DNS / 域名历史）","type":"tool","url":"https://securitytrails.com/"},
+            {"name":"crt.sh（证书透明度）","type":"tool","url":"https://crt.sh/"},
+            {"name":"DNSdumpster（DNS 枚举）","type":"tool","url":"https://dnsdumpster.com/"},
+            {"name":"ViewDNS（DNS 工具集）","type":"tool","url":"https://viewdns.info/"}
+          ]
+        },
+        {
+          "name": "IP 地址（IP）",
+          "type": "category",
+          "children": [
+            {"name":"IPinfo（IP 情报）","type":"tool","url":"https://ipinfo.io/"},
+            {"name":"AbuseIPDB（IP 信誉）","type":"tool","url":"https://www.abuseipdb.com/"},
+            {"name":"BGP.he.net（BGP / ASN）","type":"tool","url":"https://bgp.he.net/"},
+            {"name":"ARIN Whois","type":"tool","url":"https://search.arin.net/rdap/"},
+            {"name":"RIPEstat（RIPE 网络数据）","type":"tool","url":"https://stat.ripe.net/"}
+          ]
+        },
+        {
+          "name": "ASN / BGP（自治系统）",
+          "type": "category",
+          "children": [
+            {"name":"Hurricane Electric BGP Toolkit","type":"tool","url":"https://bgp.he.net/"},
+            {"name":"RIPE NCC Stat","type":"tool","url":"https://stat.ripe.net/"},
+            {"name":"PeeringDB（网络互联数据库）","type":"tool","url":"https://www.peeringdb.com/"}
+          ]
+        },
+        {
+          "name": "互联网资产搜索（Internet Assets）",
+          "type": "category",
+          "children": [
+            {"name":"Shodan（互联网设备搜索）","type":"tool","url":"https://www.shodan.io/"},
+            {"name":"Censys（互联网资产搜索）","type":"tool","url":"https://search.censys.io/"},
+            {"name":"FOFA（网络空间搜索）","type":"tool","url":"https://fofa.info/"},
+            {"name":"ZoomEye（网络空间搜索）","type":"tool","url":"https://www.zoomeye.org/"}
+          ]
+        },
+        {
+          "name": "DNS / 子域名（DNS & Subdomains）",
+          "type": "category",
+          "children": [
+            {"name":"Amass（子域名侦察）","type":"tool","url":"https://github.com/owasp-amass/amass"},
+            {"name":"Subfinder（被动子域发现）","type":"tool","url":"https://github.com/projectdiscovery/subfinder"},
+            {"name":"DNSDumpster","type":"tool","url":"https://dnsdumpster.com/"},
+            {"name":"DNSlytics","type":"tool","url":"https://dnslytics.com/"}
+          ]
+        }
+      ]
+    },
+    {
+      "name": "网站与 URL 情报（Web Intelligence）",
+      "type": "category",
+      "children": [
+        {
+          "name": "URL 分析（URL Analysis）",
+          "type": "category",
+          "children": [
+            {"name":"URLScan.io（网页扫描）","type":"tool","url":"https://urlscan.io/"},
+            {"name":"URLVoid（网址信誉）","type":"tool","url":"https://www.urlvoid.com/"},
+            {"name":"Google Safe Browsing","type":"tool","url":"https://transparencyreport.google.com/safe-browsing/search"}
+          ]
+        },
+        {
+          "name": "网站技术识别（Technology Detection）",
+          "type": "category",
+          "children": [
+            {"name":"Wappalyzer（技术栈识别）","type":"tool","url":"https://www.wappalyzer.com/"},
+            {"name":"BuiltWith（网站技术分析）","type":"tool","url":"https://builtwith.com/"},
+            {"name":"WhatRuns（网站技术识别）","type":"tool","url":"https://www.whatruns.com/"}
+          ]
+        },
+        {
+          "name": "网站发现（Website Discovery）",
+          "type": "category",
+          "children": [
+            {"name":"Common Crawl（网页数据集）","type":"dataset","url":"https://commoncrawl.org/"},
+            {"name":"urlscan.io（公开扫描记录）","type":"tool","url":"https://urlscan.io/"},
+            {"name":"PublicWWW（网页代码搜索）","type":"tool","url":"https://publicwww.com/"}
+          ]
+        },
+        {
+          "name": "代码 / 源码搜索（Code Search）",
+          "type": "category",
+          "children": [
+            {"name":"GitHub Code Search","type":"tool","url":"https://github.com/search?q=&type=code"},
+            {"name":"Sourcegraph（源码搜索）","type":"tool","url":"https://sourcegraph.com/"},
+            {"name":"grep.app（公开代码搜索）","type":"tool","url":"https://grep.app/"},
+            {"name":"Searchcode（代码搜索）","type":"tool","url":"https://searchcode.com/"}
+          ]
+        }
+      ]
+    },
+    {
+      "name": "搜索引擎与信息检索（Search）",
+      "type": "category",
+      "children": [
+        {
+          "name": "通用搜索（General Search）",
+          "type": "category",
+          "children": [
+            {"name":"Google","type":"search","url":"https://www.google.com/"},
+            {"name":"Bing","type":"search","url":"https://www.bing.com/"},
+            {"name":"DuckDuckGo","type":"search","url":"https://duckduckgo.com/"},
+            {"name":"Brave Search","type":"search","url":"https://search.brave.com/"},
+            {"name":"Yandex","type":"search","url":"https://yandex.com/"}
+          ]
+        },
+        {
+          "name": "高级搜索（Search Operators）",
+          "type": "category",
+          "children": [
+            {"name":"Google 高级搜索","type":"reference","url":"https://www.google.com/advanced_search"},
+            {"name":"Google Hacking Database","type":"database","url":"https://www.exploit-db.com/google-hacking-database"},
+            {"name":"DorkSearch","type":"tool","url":"https://dorksearch.com/"}
+          ]
+        },
+        {
+          "name": "新闻搜索（News）",
+          "type": "category",
+          "children": [
+            {"name":"Google News","type":"search","url":"https://news.google.com/"},
+            {"name":"GDELT Project（全球新闻数据）","type":"dataset","url":"https://www.gdeltproject.org/"},
+            {"name":"Bing News","type":"search","url":"https://www.bing.com/news"}
+          ]
+        }
+      ]
+    },
+    {
+      "name": "社交媒体情报（Social Media）",
+      "type": "category",
+      "children": [
+        {
+          "name": "社交平台搜索（Platform Search）",
+          "type": "category",
+          "children": [
+            {"name":"Reddit","type":"platform","url":"https://www.reddit.com/"},
+            {"name":"LinkedIn","type":"platform","url":"https://www.linkedin.com/"},
+            {"name":"X / Twitter","type":"platform","url":"https://x.com/"},
+            {"name":"TikTok","type":"platform","url":"https://www.tiktok.com/"},
+            {"name":"Facebook","type":"platform","url":"https://www.facebook.com/"}
+          ]
+        },
+        {
+          "name": "社交账号分析（Account Analysis）",
+          "type": "category",
+          "children": [
+            {"name":"Social Searcher","type":"tool","url":"https://www.social-searcher.com/"},
+            {"name":"Social Bearing","type":"tool","url":"https://socialbearing.com/"},
+            {"name":"Sherlock","type":"tool","url":"https://github.com/sherlock-project/sherlock"}
+          ]
+        },
+        {
+          "name": "社交关系与图谱（Social Graph）",
+          "type": "category",
+          "children": [
+            {"name":"Maltego（关系图谱）","type":"tool","url":"https://www.maltego.com/"},
+            {"name":"Gephi（网络图分析）","type":"tool","url":"https://gephi.org/"}
+          ]
+        }
+      ]
+    },
+    {
+      "name": "图片与视觉情报（Images）",
+      "type": "category",
+      "children": [
+        {
+          "name": "反向图片搜索（Reverse Image Search）",
+          "type": "category",
+          "children": [
+            {"name":"Google Lens","type":"tool","url":"https://lens.google.com/"},
+            {"name":"Google 图片","type":"search","url":"https://images.google.com/"},
+            {"name":"Bing Visual Search","type":"tool","url":"https://www.bing.com/visualsearch"},
+            {"name":"TinEye","type":"tool","url":"https://tineye.com/"},
+            {"name":"Yandex Images","type":"search","url":"https://yandex.com/images/"}
+          ]
+        },
+        {
+          "name": "图片取证（Image Forensics）",
+          "type": "category",
+          "children": [
+            {"name":"FotoForensics","type":"tool","url":"https://fotoforensics.com/"},
+            {"name":"Forensically（图像取证工具集）","type":"tool","url":"https://29a.ch/photo-forensics/"},
+            {"name":"EXIF.tools","type":"tool","url":"https://exif.tools/"}
+          ]
+        },
+        {
+          "name": "元数据（Metadata）",
+          "type": "category",
+          "children": [
+            {"name":"ExifTool","type":"tool","url":"https://exiftool.org/"},
+            {"name":"Jeffrey's Image Metadata Viewer","type":"tool","url":"http://exif.regex.info/exif.cgi"}
+          ]
+        }
+      ]
+    },
+    {
+      "name": "视频与音频情报（Video & Audio）",
+      "type": "category",
+      "children": [
+        {
+          "name": "视频验证（Video Verification）",
+          "type": "category",
+          "children": [
+            {"name":"InVID / WeVerify","type":"tool","url":"https://www.invid-project.eu/tools-and-services/invid-verification-plugin/"},
+            {"name":"YouTube Data Tools","type":"tool","url":"https://mattw.io/youtube-metadata/"},
+            {"name":"YouTube","type":"platform","url":"https://www.youtube.com/"}
+          ]
+        },
+        {
+          "name": "音频分析（Audio Analysis）",
+          "type": "category",
+          "children": [
+            {"name":"Audacity","type":"tool","url":"https://www.audacityteam.org/"},
+            {"name":"Sonic Visualiser","type":"tool","url":"https://www.sonicvisualiser.org/"}
+          ]
+        }
+      ]
+    },
+    {
+      "name": "文档与文件情报（Documents & Files）",
+      "type": "category",
+      "children": [
+        {
+          "name": "文档元数据（Document Metadata）",
+          "type": "category",
+          "children": [
+            {"name":"ExifTool","type":"tool","url":"https://exiftool.org/"},
+            {"name":"FOCA（文档元数据）","type":"tool","url":"https://github.com/ElevenPaths/FOCA"}
+          ]
+        },
+        {
+          "name": "文件搜索（File Search）",
+          "type": "category",
+          "children": [
+            {"name":"Google filetype 搜索","type":"search","url":"https://www.google.com/search?q=filetype%3Apdf"},
+            {"name":"Internet Archive Text Search","type":"search","url":"https://archive.org/advancedsearch.php"}
+          ]
+        },
+        {
+          "name": "文件共享与公开数据（Public Files）",
+          "type": "category",
+          "children": [
+            {"name":"Google Drive","type":"platform","url":"https://drive.google.com/"},
+            {"name":"GitHub","type":"platform","url":"https://github.com/"}
+          ]
+        }
+      ]
+    },
+    {
+      "name": "数据泄露与暴露面（Leaks & Exposure）",
+      "type": "category",
+      "children": [
+        {
+          "name": "泄露检查（Breach Check）",
+          "type": "category",
+          "children": [
+            {"name":"Have I Been Pwned","type":"tool","url":"https://haveibeenpwned.com/"},
+            {"name":"Mozilla Monitor","type":"tool","url":"https://monitor.mozilla.org/"}
+          ]
+        },
+        {
+          "name": "Paste / 文本泄露（Paste Sites）",
+          "type": "category",
+          "children": [
+            {"name":"Pastebin","type":"platform","url":"https://pastebin.com/"},
+            {"name":"Ghostbin","type":"platform","url":"https://ghostbin.com/"}
+          ]
+        },
+        {
+          "name": "凭证暴露（Credential Exposure）",
+          "type": "category",
+          "children": [
+            {"name":"HIBP Passwords","type":"database","url":"https://haveibeenpwned.com/Passwords"},
+            {"name":"DeHashed","type":"tool","url":"https://www.dehashed.com/"}
+          ]
+        }
+      ]
+    },
+    {
+      "name": "企业与组织情报（Business & Organizations）",
+      "type": "category",
+      "children": [
+        {
+          "name": "企业登记（Company Records）",
+          "type": "category",
+          "children": [
+            {"name":"OpenCorporates","type":"database","url":"https://opencorporates.com/"},
+            {"name":"SEC EDGAR","type":"database","url":"https://www.sec.gov/edgar"},
+            {"name":"Companies House UK","type":"database","url":"https://find-and-update.company-information.service.gov.uk/"},
+            {"name":"企查查","type":"database","url":"https://www.qcc.com/"},
+            {"name":"天眼查","type":"database","url":"https://www.tianyancha.com/"}
+          ]
+        },
+        {
+          "name": "组织关系（Organization Research）",
+          "type": "category",
+          "children": [
+            {"name":"OpenCorporates","type":"database","url":"https://opencorporates.com/"},
+            {"name":"Crunchbase","type":"database","url":"https://www.crunchbase.com/"},
+            {"name":"LinkedIn Companies","type":"platform","url":"https://www.linkedin.com/company/"}
+          ]
+        },
+        {
+          "name": "商业新闻与市场（Business News）",
+          "type": "category",
+          "children": [
+            {"name":"Google News","type":"search","url":"https://news.google.com/"},
+            {"name":"GDELT","type":"dataset","url":"https://www.gdeltproject.org/"}
+          ]
+        }
+      ]
+    },
+    {
+      "name": "地理空间情报（GEOINT）",
+      "type": "category",
+      "children": [
+        {
+          "name": "地图与地理搜索（Maps）",
+          "type": "category",
+          "children": [
+            {"name":"Google Maps","type":"platform","url":"https://maps.google.com/"},
+            {"name":"OpenStreetMap","type":"database","url":"https://www.openstreetmap.org/"},
+            {"name":"Bing Maps","type":"platform","url":"https://www.bing.com/maps"}
+          ]
+        },
+        {
+          "name": "卫星与遥感（Satellite）",
+          "type": "category",
+          "children": [
+            {"name":"Sentinel Hub","type":"tool","url":"https://www.sentinel-hub.com/"},
+            {"name":"NASA Worldview","type":"tool","url":"https://worldview.earthdata.nasa.gov/"},
+            {"name":"USGS EarthExplorer","type":"database","url":"https://earthexplorer.usgs.gov/"}
+          ]
+        },
+        {
+          "name": "地理定位（Geolocation）",
+          "type": "category",
+          "children": [
+            {"name":"SunCalc","type":"tool","url":"https://www.suncalc.org/"},
+            {"name":"GeoSpy","type":"tool","url":"https://geospy.ai/"},
+            {"name":"Bellingcat OSM Search","type":"tool","url":"https://osm-search.bellingcat.com/"}
+          ]
+        }
+      ]
+    },
+    {
+      "name": "威胁情报（Threat Intelligence）",
+      "type": "category",
+      "children": [
+        {
+          "name": "恶意基础设施（Malicious Infrastructure）",
+          "type": "category",
+          "children": [
+            {"name":"VirusTotal","type":"platform","url":"https://www.virustotal.com/"},
+            {"name":"AlienVault OTX","type":"platform","url":"https://otx.alienvault.com/"},
+            {"name":"URLhaus","type":"database","url":"https://urlhaus.abuse.ch/"},
+            {"name":"MalwareBazaar","type":"database","url":"https://bazaar.abuse.ch/"}
+          ]
+        },
+        {
+          "name": "威胁数据库（Threat Databases）",
+          "type": "category",
+          "children": [
+            {"name":"MITRE ATT&CK","type":"knowledge-base","url":"https://attack.mitre.org/"},
+            {"name":"MISP","type":"platform","url":"https://www.misp-project.org/"},
+            {"name":"CVE / NVD","type":"database","url":"https://nvd.nist.gov/"}
+          ]
+        },
+        {
+          "name": "恶意软件分析（Malware Analysis）",
+          "type": "category",
+          "children": [
+            {"name":"ANY.RUN","type":"tool","url":"https://any.run/"},
+            {"name":"Hybrid Analysis","type":"tool","url":"https://www.hybrid-analysis.com/"},
+            {"name":"Joe Sandbox","type":"tool","url":"https://www.joesandbox.com/"}
+          ]
+        }
+      ]
+    },
+    {
+      "name": "漏洞与安全研究（Security Research）",
+      "type": "category",
+      "children": [
+        {
+          "name": "漏洞数据库（Vulnerabilities）",
+          "type": "category",
+          "children": [
+            {"name":"NVD","type":"database","url":"https://nvd.nist.gov/"},
+            {"name":"CVE.org","type":"database","url":"https://www.cve.org/"},
+            {"name":"Exploit Database","type":"database","url":"https://www.exploit-db.com/"}
+          ]
+        },
+        {
+          "name": "安全搜索（Security Search）",
+          "type": "category",
+          "children": [
+            {"name":"Shodan","type":"tool","url":"https://www.shodan.io/"},
+            {"name":"Censys","type":"tool","url":"https://search.censys.io/"},
+            {"name":"FOFA","type":"tool","url":"https://fofa.info/"}
+          ]
+        }
+      ]
+    },
+    {
+      "name": "区块链与数字资产（Blockchain）",
+      "type": "category",
+      "children": [
+        {
+          "name": "区块链浏览器（Explorers）",
+          "type": "category",
+          "children": [
+            {"name":"Etherscan","type":"explorer","url":"https://etherscan.io/"},
+            {"name":"Blockchain.com Explorer","type":"explorer","url":"https://www.blockchain.com/explorer"},
+            {"name":"Blockchair","type":"explorer","url":"https://blockchair.com/"}
+          ]
+        },
+        {
+          "name": "钱包与地址分析（Wallets）",
+          "type": "category",
+          "children": [
+            {"name":"WalletExplorer","type":"tool","url":"https://www.walletexplorer.com/"},
+            {"name":"Arkham Intelligence","type":"platform","url":"https://intel.arkm.com/"}
+          ]
+        }
+      ]
+    },
+    {
+      "name": "公共记录与政府数据（Public Records）",
+      "type": "category",
+      "children": [
+        {
+          "name": "法院与司法记录（Court Records）",
+          "type": "category",
+          "children": [
+            {"name":"CourtListener","type":"database","url":"https://www.courtlistener.com/"},
+            {"name":"RECAP Archive","type":"database","url":"https://free.law/recap/"}
+          ]
+        },
+        {
+          "name": "政府文件（Government Data）",
+          "type": "category",
+          "children": [
+            {"name":"GovInfo","type":"database","url":"https://www.govinfo.gov/"},
+            {"name":"Data.gov","type":"dataset","url":"https://www.data.gov/"},
+            {"name":"EU Open Data","type":"dataset","url":"https://data.europa.eu/"}
+          ]
+        },
+        {
+          "name": "国际组织数据（International Data）",
+          "type": "category",
+          "children": [
+            {"name":"World Bank Open Data","type":"dataset","url":"https://data.worldbank.org/"},
+            {"name":"UN Data","type":"dataset","url":"https://data.un.org/"},
+            {"name":"OECD Data","type":"dataset","url":"https://data.oecd.org/"}
+          ]
+        }
+      ]
+    },
+    {
+      "name": "档案与历史情报（Archives）",
+      "type": "category",
+      "children": [
+        {
+          "name": "网页存档（Web Archives）",
+          "type": "category",
+          "children": [
+            {"name":"Wayback Machine","type":"archive","url":"https://web.archive.org/"},
+            {"name":"Internet Archive","type":"archive","url":"https://archive.org/"},
+            {"name":"Archive.today","type":"archive","url":"https://archive.ph/"}
+          ]
+        },
+        {
+          "name": "新闻与历史资料（Historical Sources）",
+          "type": "category",
+          "children": [
+            {"name":"Google News Archive","type":"archive","url":"https://news.google.com/newspapers"},
+            {"name":"Chronicling America","type":"archive","url":"https://chroniclingamerica.loc.gov/"},
+            {"name":"Library of Congress","type":"archive","url":"https://www.loc.gov/"}
+          ]
+        }
+      ]
+    },
+    {
+      "name": "车辆与交通情报（Vehicles & Transport）",
+      "type": "category",
+      "children": [
+        {
+          "name": "VIN / 车辆识别（VIN）",
+          "type": "category",
+          "children": [
+            {"name":"NHTSA VIN Decoder","type":"database","url":"https://vpic.nhtsa.dot.gov/"},
+            {"name":"VINCheck.info","type":"tool","url":"https://vincheck.info/"}
+          ]
+        },
+        {
+          "name": "航空与航班（Aviation）",
+          "type": "category",
+          "children": [
+            {"name":"FlightRadar24","type":"platform","url":"https://www.flightradar24.com/"},
+            {"name":"ADS-B Exchange","type":"platform","url":"https://globe.adsbexchange.com/"},
+            {"name":"OpenSky Network","type":"dataset","url":"https://opensky-network.org/"}
+          ]
+        },
+        {
+          "name": "船舶与海事（Maritime）",
+          "type": "category",
+          "children": [
+            {"name":"MarineTraffic","type":"platform","url":"https://www.marinetraffic.com/"},
+            {"name":"VesselFinder","type":"platform","url":"https://www.vesselfinder.com/"}
+          ]
+        }
+      ]
+    },
+    {
+      "name": "暗网与匿名网络（Dark Web）",
+      "type": "category",
+      "children": [
+        {
+          "name": "Tor 资源（Tor）",
+          "type": "category",
+          "children": [
+            {"name":"Tor Project","type":"project","url":"https://www.torproject.org/"},
+            {"name":"Ahmia（Tor 搜索）","type":"search","url":"https://ahmia.fi/"}
+          ]
+        },
+        {
+          "name": "匿名网络研究（Anonymity Research）",
+          "type": "category",
+          "children": [
+            {"name":"Onionoo（Tor 网络数据）","type":"database","url":"https://metrics.torproject.org/onionoo.html"},
+            {"name":"Tor Metrics","type":"dataset","url":"https://metrics.torproject.org/"}
+          ]
+        }
+      ]
+    },
+    {
+      "name": "开源情报工具与框架（OSINT Tools & Frameworks）",
+      "type": "category",
+      "children": [
+        {
+          "name": "综合 OSINT 框架（Frameworks）",
+          "type": "category",
+          "children": [
+            {"name":"OSINT Framework","type":"framework","url":"https://osintframework.com/"},
+            {"name":"Bellingcat Online Investigation Toolkit","type":"toolkit","url":"https://bellingcat.gitbook.io/toolkit"},
+            {"name":"Awesome OSINT","type":"collection","url":"https://github.com/jivoi/awesome-osint"}
+          ]
+        },
+        {
+          "name": "侦察工具（Reconnaissance）",
+          "type": "category",
+          "children": [
+            {"name":"SpiderFoot","type":"tool","url":"https://www.spiderfoot.net/"},
+            {"name":"theHarvester","type":"tool","url":"https://github.com/laramies/theHarvester"},
+            {"name":"Recon-ng","type":"tool","url":"https://github.com/lanmaster53/recon-ng"}
+          ]
+        },
+        {
+          "name": "关联分析（Link Analysis）",
+          "type": "category",
+          "children": [
+            {"name":"Maltego","type":"tool","url":"https://www.maltego.com/"},
+            {"name":"Gephi","type":"tool","url":"https://gephi.org/"},
+            {"name":"Graphistry","type":"tool","url":"https://www.graphistry.com/"}
+          ]
+        }
+      ]
+    },
+    {
+      "name": "数据集与开放数据（Datasets & Open Data）",
+      "type": "category",
+      "children": [
+        {
+          "name": "互联网数据集（Web Datasets）",
+          "type": "category",
+          "children": [
+            {"name":"Common Crawl","type":"dataset","url":"https://commoncrawl.org/"},
+            {"name":"Internet Archive","type":"dataset","url":"https://archive.org/"},
+            {"name":"GDELT","type":"dataset","url":"https://www.gdeltproject.org/"}
+          ]
+        },
+        {
+          "name": "开放政府数据（Open Government）",
+          "type": "category",
+          "children": [
+            {"name":"Data.gov","type":"dataset","url":"https://www.data.gov/"},
+            {"name":"data.europa.eu","type":"dataset","url":"https://data.europa.eu/"},
+            {"name":"UK Government Data","type":"dataset","url":"https://www.data.gov.uk/"}
+          ]
+        },
+        {
+          "name": "科学与研究数据（Research Data）",
+          "type": "category",
+          "children": [
+            {"name":"NASA Open Data","type":"dataset","url":"https://data.nasa.gov/"},
+            {"name":"Kaggle Datasets","type":"dataset","url":"https://www.kaggle.com/datasets"},
+            {"name":"Zenodo","type":"repository","url":"https://zenodo.org/"}
+          ]
+        }
+      ]
+    }
   ]
 }
