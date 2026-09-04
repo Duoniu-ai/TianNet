@@ -91,13 +91,13 @@ function update(source){
 function expandTo(node){let p=node.parent;while(p){if(!p.children&&p._children)p.children=p._children;p=p.parent;}}
 function focusNode(node){const scale=1;const tx=-node.y*scale+width/3,ty=-node.x*scale+height/2;svg.transition().duration(450).call(zoom.transform,d3.zoomIdentity.translate(tx,ty).scale(scale));}
 function runSearch(){const q=searchInput.value.trim().toLowerCase();if(!q)return;if(q!==matchQuery){matchQuery=q;matches=root.descendants().filter(d=>String(d.data.name||'').toLowerCase().includes(q)||displayName(d).toLowerCase().includes(q));matchIndex=0;}if(!matches.length){status.textContent=`未找到：${searchInput.value.trim()}`;update(root);return;}const target=matches[matchIndex%matches.length];matchIndex++;expandTo(target);update(target.parent||root);focusNode(target);status.textContent=`找到 ${matches.length} 项 · 当前第 ${((matchIndex-1)%matches.length)+1} 项`;}
-function escapeHtml(v){return String(v).replace(/[&<>'"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;',"'":'&#39;','"':'&quot;'}[c]));}
-function escapeAttr(v){return String(v).replace(/&/g,'&amp;').replace(/"/g,'&quot;');}
+function escapeHtml(v){return String(v).replace(/[&<>'\"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;',"'":'&#39;','\"':'&quot;'}[c]));}
+function escapeAttr(v){return String(v).replace(/&/g,'&amp;').replace(/\"/g,'&quot;');}
 searchInput.addEventListener('keydown',e=>{if(e.key==='Enter')runSearch();});svg.on('click',()=>tooltip.style.display='none');
 d3.json('system.json').then(systemData=>{
  root=d3.hierarchy({name:'天网互联（TIANNET）',type:'root',children:systemData.children||[]});root.x0=height/2;root.y0=0;root._children=root.children;
  root.descendants().forEach(d=>{d.id=++nodeId;if(d.depth>0){d._children=d.children;d.children=null;}});
- update(root);const initialScale=1.15;const initialTx=width/2;const initialTy=(height/2)-(height/2*initialScale);svg.call(zoom.transform,d3.zoomIdentity.translate(initialTx,initialTy).scale(initialScale));const all=visibleDescendants();status.textContent=`已加载 · ${all.length} 个节点 · ${all.filter(d=>d.data.type==='branch').length} 个分支 · ${all.filter(d=>d.data.type==='project').length} 个项目`;
+ update(root);const initialScale=1.15;const nodes=root.descendants();const minX=d3.min(nodes,d=>d.x),maxX=d3.max(nodes,d=>d.x),minY=d3.min(nodes,d=>d.y),maxY=d3.max(nodes,d=>d.y);const initialTx=(width-initialScale*(minY+maxY))/2;const initialTy=((height+50)-initialScale*(minX+maxX))/2;svg.call(zoom.transform,d3.zoomIdentity.translate(initialTx,initialTy).scale(initialScale));const all=visibleDescendants();status.textContent=`已加载 · ${all.length} 个节点 · ${all.filter(d=>d.data.type==='branch').length} 个分支 · ${all.filter(d=>d.data.type==='project').length} 个项目`;
 }).catch(e=>{console.error(e);status.textContent='加载失败：请确认 system.json 正常。';});
 })();
 </script>
