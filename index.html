@@ -20,12 +20,12 @@ body{background:#0d1117;color:#c9d1d9;font-family:"Segoe UI",Arial,"Noto Sans SC
 .link{fill:none;stroke:#30363d;stroke-width:1.5px}
 .node{cursor:pointer}
 .node circle{fill:#161b22;stroke:#58a6ff;stroke-width:2px}
-.node.branch circle{fill:#172033;stroke:#a371f7;stroke-width:3px}
-.node.project rect{fill:#161b22;stroke:#58a6ff;stroke-width:2px}
+.node.branch circle{fill:#172033;stroke:#a371f7;stroke-width:4px}
+.node.project rect{fill:#161b22;stroke:#58a6ff;stroke-width:2.5px}
 .node.module circle,.node.tool circle,.node.search circle,.node.database circle,.node.dataset circle,.node.archive circle,.node.platform circle,.node.framework circle,.node.toolkit circle,.node.collection circle,.node.explorer circle,.node.technology circle,.node.reference circle{fill:#238636;stroke:#2ea043}
 .node text{font-size:12px;fill:#c9d1d9;dominant-baseline:middle;user-select:none}
-.node.branch text{fill:#d2a8ff;font-weight:700;font-size:14px}
-.node.project text{fill:#79c0ff;font-weight:600}
+.node.branch text{fill:#d2a8ff;font-weight:700;font-size:15px}
+.node.project text{fill:#79c0ff;font-weight:700;font-size:14px}
 .node.module text{fill:#7ee787}
 .node:hover text{fill:#f0f6fc}
 .node.match text{fill:#f0b429;font-weight:700}
@@ -33,7 +33,7 @@ body{background:#0d1117;color:#c9d1d9;font-family:"Segoe UI",Arial,"Noto Sans SC
 #tooltip{position:fixed;display:none;z-index:20;pointer-events:none;background:#161b22;border:1px solid #30363d;border-radius:6px;padding:8px 12px;font-size:12px;color:#c9d1d9;max-width:390px;box-shadow:0 8px 20px rgba(0,0,0,.35)}
 #tooltip a{color:#58a6ff;word-break:break-all}
 #status{position:fixed;left:16px;bottom:14px;z-index:10;padding:6px 9px;background:rgba(22,27,34,.92);border:1px solid #30363d;border-radius:6px;font-size:11px;color:#8b949e}
-@media (max-width:900px){#legend{display:none}#header{gap:10px;padding:9px 12px}#header h1{font-size:16px}.node text{font-size:11px}.node.branch text{font-size:12px}}
+@media (max-width:900px){#legend{display:none}#header{gap:10px;padding:9px 12px}#header h1{font-size:16px}.node text{font-size:11px}.node.branch text{font-size:13px}.node.project text{font-size:12px}}
 </style>
 </head>
 <body>
@@ -54,20 +54,21 @@ const searchInput=document.getElementById('search');
 const width=window.innerWidth;
 const height=Math.max(320,window.innerHeight-50);
 svg.attr('viewBox',`0 0 ${width} ${height}`);
-const g=svg.append('g').attr('transform','translate(40,50)');
-const zoom=d3.zoom().scaleExtent([0.08,3]).on('zoom',event=>g.attr('transform',event.transform));
+const g=svg.append('g').attr('transform','translate(60,50)');
+const zoom=d3.zoom().scaleExtent([0.06,3]).on('zoom',event=>g.attr('transform',event.transform));
 svg.call(zoom);
 let root;
 let nodeId=0;
 let matches=[];
 let matchQuery='';
 let matchIndex=0;
-const tree=d3.tree().nodeSize([30,220]);
+// 横向树：纵向节点间距加大，层级间距显著拉开，避免“分支”和“项目”视觉挤在一起。
+const tree=d3.tree().nodeSize([52,340]);
 function diagonal(source,target){const mid=(source.y+target.y)/2;return `M${source.y},${source.x}C${mid},${source.x} ${mid},${target.x} ${target.y},${target.x}`;}
 function nodeClass(d){return `node ${d.data.type||'category'}${d.data.url?' leaf':''}${matches.includes(d)?' match':''}`;}
 function update(source){
  tree(root);
- root.descendants().forEach(d=>{d.y=d.depth*220;});
+ root.descendants().forEach(d=>{d.y=d.depth*340;});
  const nodes=root.descendants();
  const links=root.links();
  const nodeSelection=g.selectAll('g.node').data(nodes,d=>d.id);
@@ -91,16 +92,20 @@ function update(source){
   .on('mouseleave',()=>{tooltip.style.display='none';});
  nodeEnter.each(function(d){
   const n=d3.select(this);
-  if(d.data.type==='project') n.append('rect').attr('x',-7).attr('y',-7).attr('width',14).attr('height',14).attr('rx',3);
-  else n.append('circle').attr('r',d.data.type==='branch'?10:(d.data.type==='root'?11:5));
+  if(d.data.type==='project') n.append('rect').attr('x',-10).attr('y',-10).attr('width',20).attr('height',20).attr('rx',4);
+  else n.append('circle').attr('r',d.data.type==='branch'?12:(d.data.type==='root'||d.data.type==='system-root'?12:5));
   n.append('text').text(d=>d.data.name);
  });
  const nodeUpdate=nodeEnter.merge(nodeSelection).transition().duration(250)
   .attr('transform',d=>`translate(${d.y},${d.x})`)
   .attr('class',nodeClass);
  nodeUpdate.select('text')
-  .attr('x',d=>(d.data.type==='branch'||d.data.type==='project'||d.children||d._children)?-16:12)
-  .attr('y',d=>(d.data.type==='branch'||d.data.type==='project')?-16:0)
+  .attr('x',d=>{
+    if(d.data.type==='branch') return -22;
+    if(d.data.type==='project') return -22;
+    return (d.children||d._children)?-16:14;
+  })
+  .attr('y',d=>(d.data.type==='branch'||d.data.type==='project')?-20:0)
   .attr('text-anchor',d=>(d.data.type==='branch'||d.data.type==='project'||d.children||d._children)?'end':'start');
  nodeSelection.exit().transition().duration(250).attr('transform',`translate(${source.y},${source.x})`).remove();
  const linkSelection=g.selectAll('path.link').data(links,d=>d.target.id);
@@ -110,7 +115,7 @@ function update(source){
  root.descendants().forEach(d=>{d.x0=d.x;d.y0=d.y;});
 }
 function expandTo(node){let current=node.parent;while(current){if(!current.children&&current._children)current.children=current._children;current=current.parent;}}
-function focusNode(node){const scale=1.15;const tx=-node.y*scale+width/3;const ty=-node.x*scale+height/2;svg.transition().duration(500).call(zoom.transform,d3.zoomIdentity.translate(tx,ty).scale(scale));}
+function focusNode(node){const scale=1.05;const tx=-node.y*scale+width/3;const ty=-node.x*scale+height/2;svg.transition().duration(500).call(zoom.transform,d3.zoomIdentity.translate(tx,ty).scale(scale));}
 function runSearch(){
  const query=searchInput.value.trim().toLowerCase();
  if(!query)return;
