@@ -81,7 +81,7 @@ function update(source){
  const nodeUpdate=nodeEnter.merge(nodeSelection).transition().duration(260).attr('transform',d=>`translate(${d.y},${d.x})`).attr('class',nodeClass);
  nodeUpdate.select('.node-label').text(displayName).attr('x',d=>d.data.type==='branch'||d.data.type==='project'?-15:((d.children||d._children)?-12:11)).attr('y',0).attr('text-anchor',d=>(d.data.type==='branch'||d.data.type==='project'||d.children||d._children)?'end':'start');
  nodeUpdate.select('.checkmark').text(d=>d.data.status==='completed'?'✓':'').attr('x',0).attr('y',0);
- nodeUpdate.select('.count-badge').attr('x',d=>(d.data.type==='branch'||d.data.type==='project')?24:9).attr('y',0);
+ nodeUpdate.select('.count-badge').attr('x',d=>(d.data.type==='branch'||d.data.type==='project')?24:15).attr('y',0);
  nodeSelection.exit().transition().duration(220).attr('transform',`translate(${source.y},${source.x})`).remove();
  const linkSelection=g.selectAll('path.link').data(links,d=>d.target.id);
  const linkEnter=linkSelection.enter().insert('path','g').attr('class','link').attr('d',()=>{const o={x:source.x0||0,y:source.y0||0};return diagonal(o,o);});
