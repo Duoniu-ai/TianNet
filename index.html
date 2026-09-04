@@ -19,8 +19,6 @@ body:before{content:"";position:fixed;inset:0;pointer-events:none;opacity:.28;ba
 #tree{position:absolute;inset:0;width:100vw;height:100vh;cursor:grab}
 #tree:active{cursor:grabbing}
 .link{fill:none;stroke:#3a424c;stroke-width:1.1px;stroke-opacity:.72}
-.branch-zone{fill:rgba(38,44,52,.16);stroke:#3c4651;stroke-width:1px;stroke-dasharray:5 5;rx:12;ry:12;pointer-events:none}
-.branch-zone-title{font-size:10px;fill:#707986;letter-spacing:.6px;pointer-events:none}
 .node{cursor:pointer}
 .node circle{fill:#151a20;stroke:#687482;stroke-width:1.5px}
 .node.root circle,.node.system-root circle{fill:#20262d;stroke:#929ba6;stroke-width:2px}
@@ -46,7 +44,7 @@ body:before{content:"";position:fixed;inset:0;pointer-events:none;opacity:.28;ba
 <div id="header">
 <h1>TIANNET 天网</h1>
 <input id="search" type="text" placeholder="搜索系统、分支、项目或工具…（回车定位）" autocomplete="off">
-<div id="legend">分支区域 · 项目节点 · 模块/资源 · 点击展开 · 滚轮缩放 · 拖拽平移</div>
+<div id="legend">分支 · 项目 · 模块/资源 · 点击展开 · 滚轮缩放 · 拖拽平移</div>
 </div>
 <svg id="tree" aria-label="TIANNET 天网系统知识网络"></svg>
 <div id="tooltip"></div>
@@ -67,15 +65,6 @@ function update(source){
  tree(root);
  root.descendants().forEach(d=>d.y=d.depth*300);
  const nodes=root.descendants(),links=root.links();
- // Remove old branch zones; rebuild from currently visible branch descendants.
- g.selectAll('.branch-zone,.branch-zone-title').remove();
- root.children&&root.children.forEach(branch=>{
-   const ds=branch.descendants(); if(!ds.length)return;
-   const minX=d3.min(ds,d=>d.x)-24,maxX=d3.max(ds,d=>d.x)+24;
-   const minY=d3.min(ds,d=>d.y)-34,maxY=d3.max(ds,d=>d.y)+34;
-   const zone=g.append('rect').attr('class','branch-zone').attr('x',minY).attr('y',minX).attr('width',Math.max(210,maxY-minY)).attr('height',Math.max(60,maxX-minX)).attr('rx',12);
-   g.append('text').attr('class','branch-zone-title').attr('x',minY+12).attr('y',minX+16).text('BRANCH');
- });
  const nodeSelection=g.selectAll('g.node').data(nodes,d=>d.id);
  const nodeEnter=nodeSelection.enter().append('g').attr('class',nodeClass).attr('transform',`translate(${source.y0||0},${source.x0||0})`)
   .on('click',(event,d)=>{event.stopPropagation();if(d.data.url){window.open(d.data.url,'_blank','noopener,noreferrer');return;}if(d.children){d._children=d.children;d.children=null;}else if(d._children){d.children=d._children;}update(d);})
