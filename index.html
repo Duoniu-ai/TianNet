@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>TIANNET 天网｜系统知识网络</title>
+<title>天网互联（TIANNET）｜系统知识网络</title>
 <script src="https://cdn.jsdelivr.net/npm/d3@7"></script>
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
@@ -45,11 +45,11 @@ body:before{content:"";position:fixed;inset:0;pointer-events:none;opacity:.28;ba
 </head>
 <body>
 <div id="header">
-<h1>TIANNET 天网</h1>
+<h1>天网互联（TIANNET）</h1>
 <input id="search" type="text" placeholder="搜索系统、分支、项目或工具…（回车定位）" autocomplete="off">
 <div id="legend">分支 · 项目 · 模块/资源 · ✓ 已完成 · 点击展开 · 滚轮缩放 · 拖拽平移</div>
 </div>
-<svg id="tree" aria-label="TIANNET 天网系统知识网络"></svg>
+<svg id="tree" aria-label="天网互联（TIANNET）系统知识网络"></svg>
 <div id="tooltip"></div>
 <div id="status">正在加载系统数据…</div>
 <script>
@@ -81,7 +81,7 @@ function update(source){
  const nodeUpdate=nodeEnter.merge(nodeSelection).transition().duration(260).attr('transform',d=>`translate(${d.y},${d.x})`).attr('class',nodeClass);
  nodeUpdate.select('.node-label').text(displayName).attr('x',d=>d.data.type==='branch'||d.data.type==='project'?-15:((d.children||d._children)?-12:11)).attr('y',0).attr('text-anchor',d=>(d.data.type==='branch'||d.data.type==='project'||d.children||d._children)?'end':'start');
  nodeUpdate.select('.checkmark').text(d=>d.data.status==='completed'?'✓':'').attr('x',0).attr('y',0);
- nodeUpdate.select('.count-badge').attr('x',d=>d.data.type==='branch'||d.data.type==='project'?14:9).attr('y',0);
+ nodeUpdate.select('.count-badge').attr('x',d=>(d.data.type==='branch'||d.data.type==='project')?24:9).attr('y',0);
  nodeSelection.exit().transition().duration(220).attr('transform',`translate(${source.y},${source.x})`).remove();
  const linkSelection=g.selectAll('path.link').data(links,d=>d.target.id);
  const linkEnter=linkSelection.enter().insert('path','g').attr('class','link').attr('d',()=>{const o={x:source.x0||0,y:source.y0||0};return diagonal(o,o);});
@@ -96,7 +96,7 @@ function escapeHtml(v){return String(v).replace(/[&<>'"]/g,c=>({'&':'&amp;','<':
 function escapeAttr(v){return String(v).replace(/&/g,'&amp;').replace(/"/g,'&quot;');}
 searchInput.addEventListener('keydown',e=>{if(e.key==='Enter')runSearch();});svg.on('click',()=>tooltip.style.display='none');
 d3.json('system.json').then(systemData=>{
- root=d3.hierarchy({name:'天网系统（TIANNET）',type:'root',children:systemData.children||[]});root.x0=height/2;root.y0=0;root._children=root.children;
+ root=d3.hierarchy({name:'天网互联（TIANNET）',type:'root',children:systemData.children||[]});root.x0=height/2;root.y0=0;root._children=root.children;
  root.descendants().forEach(d=>{d.id=++nodeId;if(d.depth>0){d._children=d.children;d.children=null;}});
  update(root);const all=visibleDescendants();status.textContent=`已加载 · ${all.length} 个节点 · ${all.filter(d=>d.data.type==='branch').length} 个分支 · ${all.filter(d=>d.data.type==='project').length} 个项目`;
 }).catch(e=>{console.error(e);status.textContent='加载失败：请确认 system.json 正常。';});
