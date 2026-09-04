@@ -2,141 +2,114 @@
   "name": "天网系统（TIANNET System）",
   "type": "system-root",
   "children": [
-    {
-      "name": "天网核心（TIANNET Core）",
-      "type": "branch",
-      "children": [
-        {"name":"TIANNET 天网","type":"project","children":[
-          {"name":"TIANNET Tree 天网知识网络","type":"module"},
-          {"name":"知识体系 / 分类体系","type":"module"},
-          {"name":"实体与关系网络","type":"module"},
-          {"name":"数据治理与溯源","type":"module"}
-        ]},
-        {"name":"统一数据底座","type":"project","children":[
-          {"name":"Raw / Fact / Entity","type":"module"},
-          {"name":"Relationship / Snapshot / Event","type":"module"},
-          {"name":"Insight / Evidence","type":"module"}
-        ]}
-      ]
-    },
-    {
-      "name": "网站情报（Website Intelligence）",
-      "type": "branch",
-      "children": [
-        {"name":"SiteIntel","type":"project","children":[
-          {"name":"Website Intelligence","type":"module"},
-          {"name":"Technology Catalog","type":"module"},
-          {"name":"Technology Profile","type":"module"},
-          {"name":"Evidence / Snapshot / Event","type":"module"},
-          {"name":"Discovery","type":"module"}
-        ]},
-        {"name":"Mangzhuo / Website","type":"project","children":[
-          {"name":"Website Navigation","type":"module"},
-          {"name":"Website Discovery","type":"module"},
-          {"name":"Website Directory","type":"module"},
-          {"name":"Candidate / Seed / Ranking","type":"module"}
-        ]}
-      ]
-    },
-    {
-      "name": "IP 与网络情报（IP & Network Intelligence）",
-      "type": "branch",
-      "children": [
-        {"name":"DUONIU","type":"project","children":[
-          {"name":"IP Intelligence","type":"module"},
-          {"name":"IP / ASN / BGP","type":"module"},
-          {"name":"Domain / DNS","type":"module"},
-          {"name":"Geolocation","type":"module"},
-          {"name":"Infrastructure Intelligence","type":"module"}
-        ]},
-        {"name":"网络资产情报","type":"project","children":[
-          {"name":"Internet Assets","type":"module"},
-          {"name":"DNS / Subdomain","type":"module"},
-          {"name":"TLS / Certificate","type":"module"}
-        ]}
-      ]
-    },
-    {
-      "name": "数据发现与采集（Discovery & Collection）",
-      "type": "branch",
-      "children": [
-        {"name":"Discovery Engine","type":"project","children":[
-          {"name":"Source","type":"module"},
-          {"name":"Ranking","type":"module"},
-          {"name":"Candidate","type":"module"},
-          {"name":"Normalization","type":"module"},
-          {"name":"Verification","type":"module"}
-        ]},
-        {"name":"数据采集系统","type":"project","children":[
-          {"name":"Crawler / Fetch","type":"module"},
-          {"name":"SafeFetch","type":"module"},
-          {"name":"Metadata","type":"module"},
-          {"name":"Evidence Collection","type":"module"}
-        ]}
-      ]
-    },
-    {
-      "name": "AI 与智能代理（AI & Agents）",
-      "type": "branch",
-      "children": [
-        {"name":"AI 编程与开发代理","type":"project","children":[
-          {"name":"Codex","type":"tool"},
-          {"name":"OpenClaw","type":"tool"},
-          {"name":"Ollama / Local Models","type":"module"}
-        ]},
-        {"name":"情报智能层","type":"project","children":[
-          {"name":"Classification","type":"module"},
-          {"name":"Entity Resolution","type":"module"},
-          {"name":"Relationship Inference","type":"module"},
-          {"name":"Insight Generation","type":"module"}
-        ]}
-      ]
-    },
-    {
-      "name": "安全与威胁情报（Security & Threat Intelligence）",
-      "type": "branch",
-      "children": [
-        {"name":"Threat Intelligence","type":"project","children":[
-          {"name":"IOC","type":"module"},
-          {"name":"Malware","type":"module"},
-          {"name":"Vulnerability","type":"module"},
-          {"name":"MITRE ATT&CK","type":"module"}
-        ]},
-        {"name":"安全研究","type":"project","children":[
-          {"name":"Exposure","type":"module"},
-          {"name":"Attack Surface","type":"module"},
-          {"name":"Security Evidence","type":"module"}
-        ]}
-      ]
-    },
-    {
-      "name": "基础设施与平台（Infrastructure & Platform）",
-      "type": "branch",
-      "children": [
-        {"name":"Web Platform","type":"project","children":[
-          {"name":"Next.js","type":"technology"},
-          {"name":"PostgreSQL","type":"technology"},
-          {"name":"Prisma","type":"technology"},
-          {"name":"Nuxt / Nitro","type":"technology"}
-        ]},
-        {"name":"运行与运维","type":"project","children":[
-          {"name":"GitHub / Git","type":"tool"},
-          {"name":"GitHub Pages","type":"platform"},
-          {"name":"CI / CD","type":"module"},
-          {"name":"Observability","type":"module"}
-        ]}
-      ]
-    },
-    {
-      "name": "OSINT 开源情报资源（OSINT Resources）",
-      "type": "branch",
-      "children": [
-        {"name":"身份 / 网络 / 网站 / 搜索","type":"collection"},
-        {"name":"社交 / 图片 / 视频 / 文档","type":"collection"},
-        {"name":"企业 / GEOINT / 威胁情报","type":"collection"},
-        {"name":"公共记录 / 档案 / 数据集","type":"collection"},
-        {"name":"工具 / 框架 / 开源项目","type":"collection"}
-      ]
-    }
+    {"name":"天网核心与知识体系（TIANNET Core & Knowledge）","type":"branch","children":[
+      {"name":"TIANNET 天网","type":"project","children":[
+        {"name":"知识网络","type":"module","children":[{"name":"分类体系","type":"module"},{"name":"实体网络","type":"module"},{"name":"关系网络","type":"module"}]},
+        {"name":"知识治理","type":"module","children":[{"name":"数据治理","type":"module"},{"name":"来源溯源","type":"module"},{"name":"质量控制","type":"module"}]},
+        {"name":"Tree UI","type":"module","children":[{"name":"节点系统","type":"module"},{"name":"分支系统","type":"module"},{"name":"搜索与导航","type":"module"}]}
+      ]},
+      {"name":"统一数据底座","type":"project","children":[{"name":"Raw Collection","type":"module"},{"name":"Fact / Entity","type":"module"},{"name":"Relationship","type":"module"},{"name":"Snapshot / Event","type":"module"},{"name":"Insight / Evidence","type":"module"}]}
+    ]},
+    {"name":"网站与互联网情报（Web & Internet Intelligence）","type":"branch","children":[
+      {"name":"SiteIntel","type":"project","children":[{"name":"Website Intelligence","type":"module"},{"name":"Technology Intelligence","type":"module"},{"name":"Technology Catalog","type":"module"},{"name":"Evidence / Snapshot / Event","type":"module"},{"name":"Website Discovery","type":"module"}]},
+      {"name":"Mangzhuo / Website","type":"project","children":[{"name":"Website Navigation","type":"module"},{"name":"Website Discovery","type":"module"},{"name":"Website Directory","type":"module"},{"name":"Candidate / Seed / Ranking","type":"module"}]},
+      {"name":"URL 与域名情报","type":"project","children":[{"name":"Domain","type":"module"},{"name":"URL","type":"module"},{"name":"DNS","type":"module"},{"name":"Subdomain","type":"module"},{"name":"Certificate","type":"module"}]}
+    ]},
+    {"name":"IP、网络与基础设施情报（IP & Infrastructure）","type":"branch","children":[
+      {"name":"DUONIU","type":"project","children":[{"name":"IP Intelligence","type":"module"},{"name":"IP / ASN / BGP","type":"module"},{"name":"Domain / DNS","type":"module"},{"name":"Geolocation","type":"module"},{"name":"Infrastructure Intelligence","type":"module"}]},
+      {"name":"互联网资产","type":"project","children":[{"name":"IP Assets","type":"module"},{"name":"Domains","type":"module"},{"name":"Hosts","type":"module"},{"name":"Ports / Services","type":"module"},{"name":"TLS / Certificates","type":"module"}]},
+      {"name":"网络测量","type":"project","children":[{"name":"Routing","type":"module"},{"name":"BGP","type":"module"},{"name":"DNS Measurement","type":"module"},{"name":"Latency / Connectivity","type":"module"}]}
+    ]},
+    {"name":"数据发现与采集（Discovery & Collection）","type":"branch","children":[
+      {"name":"Discovery Engine","type":"project","children":[{"name":"Source","type":"module"},{"name":"Ranking","type":"module"},{"name":"Candidate","type":"module"},{"name":"Normalization","type":"module"},{"name":"Verification","type":"module"},{"name":"Deduplication","type":"module"}]},
+      {"name":"数据采集系统","type":"project","children":[{"name":"Crawler","type":"module"},{"name":"Fetch","type":"module"},{"name":"SafeFetch","type":"module"},{"name":"Metadata","type":"module"},{"name":"Evidence Collection","type":"module"}]},
+      {"name":"数据源体系","type":"project","children":[{"name":"Search Engines","type":"module"},{"name":"Rankings","type":"module"},{"name":"Directories","type":"module"},{"name":"Public Datasets","type":"module"},{"name":"Feeds / APIs","type":"module"}]}
+    ]},
+    {"name":"身份、人员与组织情报（Identity & People）","type":"branch","children":[
+      {"name":"身份情报","type":"project","children":[{"name":"Username","type":"module"},{"name":"Email","type":"module"},{"name":"Phone","type":"module"},{"name":"Identity Resolution","type":"module"}]},
+      {"name":"人员情报","type":"project","children":[{"name":"People Search","type":"module"},{"name":"Professional Profiles","type":"module"},{"name":"Social Accounts","type":"module"},{"name":"Public Records","type":"module"}]},
+      {"name":"组织情报","type":"project","children":[{"name":"Company","type":"module"},{"name":"Ownership","type":"module"},{"name":"Executives","type":"module"},{"name":"Corporate Relationships","type":"module"}]}
+    ]},
+    {"name":"企业、商业与经济情报（Business & Economic Intelligence）","type":"branch","children":[
+      {"name":"企业情报","type":"project","children":[{"name":"Company Registry","type":"module"},{"name":"Corporate Structure","type":"module"},{"name":"Beneficial Ownership","type":"module"},{"name":"Subsidiaries","type":"module"}]},
+      {"name":"商业情报","type":"project","children":[{"name":"Market","type":"module"},{"name":"Competitors","type":"module"},{"name":"Products","type":"module"},{"name":"Supply Chain","type":"module"}]},
+      {"name":"金融与经济","type":"project","children":[{"name":"Markets","type":"module"},{"name":"Economic Data","type":"module"},{"name":"Financial Filings","type":"module"},{"name":"Trade Data","type":"module"}]}
+    ]},
+    {"name":"搜索与信息检索（Search & Retrieval）","type":"branch","children":[
+      {"name":"搜索引擎","type":"project","children":[{"name":"Web Search","type":"module"},{"name":"News Search","type":"module"},{"name":"Image Search","type":"module"},{"name":"Video Search","type":"module"}]},
+      {"name":"高级检索","type":"project","children":[{"name":"Search Operators","type":"module"},{"name":"Dorks","type":"module"},{"name":"Site Search","type":"module"},{"name":"Filetype Search","type":"module"}]},
+      {"name":"信息检索系统","type":"project","children":[{"name":"Indexing","type":"module"},{"name":"Ranking","type":"module"},{"name":"Semantic Search","type":"module"},{"name":"Knowledge Retrieval","type":"module"}]}
+    ]},
+    {"name":"社交媒体与关系网络（Social & Graph Intelligence）","type":"branch","children":[
+      {"name":"社交媒体情报","type":"project","children":[{"name":"Platform Discovery","type":"module"},{"name":"Account Analysis","type":"module"},{"name":"Content Analysis","type":"module"},{"name":"Social Monitoring","type":"module"}]},
+      {"name":"关系网络","type":"project","children":[{"name":"Social Graph","type":"module"},{"name":"Entity Relationships","type":"module"},{"name":"Community Detection","type":"module"},{"name":"Influence Analysis","type":"module"}]},
+      {"name":"图谱分析","type":"project","children":[{"name":"Graph Database","type":"module"},{"name":"Graph Analytics","type":"module"},{"name":"Visualization","type":"module"}]}
+    ]},
+    {"name":"图片、视频与多媒体情报（Media Intelligence）","type":"branch","children":[
+      {"name":"图片情报","type":"project","children":[{"name":"Reverse Image Search","type":"module"},{"name":"Image Metadata","type":"module"},{"name":"Image Forensics","type":"module"},{"name":"Geolocation from Images","type":"module"}]},
+      {"name":"视频情报","type":"project","children":[{"name":"Video Verification","type":"module"},{"name":"Video Metadata","type":"module"},{"name":"Frame Analysis","type":"module"},{"name":"Source Identification","type":"module"}]},
+      {"name":"音频情报","type":"project","children":[{"name":"Audio Analysis","type":"module"},{"name":"Speech / Transcription","type":"module"},{"name":"Source Identification","type":"module"}]}
+    ]},
+    {"name":"文档、文件与代码情报（Documents & Code）","type":"branch","children":[
+      {"name":"文档情报","type":"project","children":[{"name":"Document Search","type":"module"},{"name":"Document Metadata","type":"module"},{"name":"PDF Intelligence","type":"module"},{"name":"Office Documents","type":"module"}]},
+      {"name":"文件情报","type":"project","children":[{"name":"File Search","type":"module"},{"name":"File Metadata","type":"module"},{"name":"Archive Analysis","type":"module"}]},
+      {"name":"代码情报","type":"project","children":[{"name":"Source Code Search","type":"module"},{"name":"Repository Intelligence","type":"module"},{"name":"Dependency Intelligence","type":"module"},{"name":"Secret Exposure","type":"module"}]}
+    ]},
+    {"name":"地理空间与位置情报（GEOINT & Location）","type":"branch","children":[
+      {"name":"地图与地理","type":"project","children":[{"name":"Maps","type":"module"},{"name":"Satellite Imagery","type":"module"},{"name":"Street View","type":"module"},{"name":"Terrain","type":"module"}]},
+      {"name":"位置分析","type":"project","children":[{"name":"Geolocation","type":"module"},{"name":"Coordinates","type":"module"},{"name":"Place Intelligence","type":"module"},{"name":"Route Analysis","type":"module"}]},
+      {"name":"遥感与空间数据","type":"project","children":[{"name":"Remote Sensing","type":"module"},{"name":"Earth Observation","type":"module"},{"name":"GIS Data","type":"module"}]}
+    ]},
+    {"name":"安全、威胁与漏洞情报（Security & Threat Intelligence）","type":"branch","children":[
+      {"name":"Threat Intelligence","type":"project","children":[{"name":"IOC","type":"module"},{"name":"Malware","type":"module"},{"name":"Campaigns","type":"module"},{"name":"Threat Actors","type":"module"}]},
+      {"name":"漏洞情报","type":"project","children":[{"name":"CVE","type":"module"},{"name":"Vulnerability Databases","type":"module"},{"name":"Exploit Intelligence","type":"module"},{"name":"Security Advisories","type":"module"}]},
+      {"name":"攻击面情报","type":"project","children":[{"name":"Attack Surface","type":"module"},{"name":"Exposure","type":"module"},{"name":"Cloud Exposure","type":"module"},{"name":"Security Evidence","type":"module"}]},
+      {"name":"ATT&CK / TTP","type":"project","children":[{"name":"MITRE ATT&CK","type":"module"},{"name":"Tactics","type":"module"},{"name":"Techniques","type":"module"},{"name":"Groups / Software","type":"module"}]}
+    ]},
+    {"name":"网络空间与数字资产（Cyberspace & Digital Assets）","type":"branch","children":[
+      {"name":"区块链情报","type":"project","children":[{"name":"Blockchain Explorers","type":"module"},{"name":"Transactions","type":"module"},{"name":"Wallets","type":"module"},{"name":"Smart Contracts","type":"module"}]},
+      {"name":"数字资产","type":"project","children":[{"name":"Tokens","type":"module"},{"name":"NFT","type":"module"},{"name":"Exchanges","type":"module"},{"name":"On-chain Analytics","type":"module"}]},
+      {"name":"网络空间研究","type":"project","children":[{"name":"Internet Measurement","type":"module"},{"name":"Infrastructure Mapping","type":"module"},{"name":"Exposure Discovery","type":"module"}]}
+    ]},
+    {"name":"公共记录、政府与法律情报（Public Records & Government）","type":"branch","children":[
+      {"name":"政府数据","type":"project","children":[{"name":"Government Portals","type":"module"},{"name":"Open Government Data","type":"module"},{"name":"Public Notices","type":"module"}]},
+      {"name":"法律情报","type":"project","children":[{"name":"Court Records","type":"module"},{"name":"Case Law","type":"module"},{"name":"Regulatory Records","type":"module"},{"name":"Legal Entities","type":"module"}]},
+      {"name":"公共记录","type":"project","children":[{"name":"Property Records","type":"module"},{"name":"Licenses","type":"module"},{"name":"Procurement","type":"module"},{"name":"Corporate Filings","type":"module"}]}
+    ]},
+    {"name":"档案、历史与时间线情报（Archives & Historical Intelligence）","type":"branch","children":[
+      {"name":"互联网档案","type":"project","children":[{"name":"Web Archives","type":"module"},{"name":"Historical Snapshots","type":"module"},{"name":"Archived Websites","type":"module"}]},
+      {"name":"历史资料","type":"project","children":[{"name":"Historical Documents","type":"module"},{"name":"Newspapers","type":"module"},{"name":"Historical Maps","type":"module"}]},
+      {"name":"时间线情报","type":"project","children":[{"name":"Event Timeline","type":"module"},{"name":"Change Detection","type":"module"},{"name":"Historical Comparison","type":"module"}]}
+    ]},
+    {"name":"数据集、开放数据与知识库（Datasets & Open Data）","type":"branch","children":[
+      {"name":"开放数据","type":"project","children":[{"name":"Government Datasets","type":"module"},{"name":"Scientific Data","type":"module"},{"name":"Economic Data","type":"module"},{"name":"Geospatial Data","type":"module"}]},
+      {"name":"公共数据集","type":"project","children":[{"name":"Common Crawl","type":"module"},{"name":"Kaggle","type":"module"},{"name":"Zenodo","type":"module"},{"name":"Academic Datasets","type":"module"}]},
+      {"name":"知识库","type":"project","children":[{"name":"Knowledge Bases","type":"module"},{"name":"Reference Data","type":"module"},{"name":"Taxonomies","type":"module"},{"name":"Ontologies","type":"module"}]}
+    ]},
+    {"name":"AI、机器学习与智能情报（AI & Intelligent Analysis）","type":"branch","children":[
+      {"name":"AI 基础设施","type":"project","children":[{"name":"Codex","type":"tool"},{"name":"OpenClaw","type":"tool"},{"name":"Ollama","type":"tool"},{"name":"Model Gateway","type":"module"}]},
+      {"name":"情报智能层","type":"project","children":[{"name":"Classification","type":"module"},{"name":"Entity Resolution","type":"module"},{"name":"Relationship Inference","type":"module"},{"name":"Insight Generation","type":"module"}]},
+      {"name":"机器学习分析","type":"project","children":[{"name":"Information Extraction","type":"module"},{"name":"Entity Extraction","type":"module"},{"name":"Anomaly Detection","type":"module"},{"name":"Ranking / Scoring","type":"module"}]},
+      {"name":"Agent Intelligence","type":"project","children":[{"name":"Research Agents","type":"module"},{"name":"Collection Agents","type":"module"},{"name":"Analysis Agents","type":"module"}]}
+    ]},
+    {"name":"平台、基础设施与开发工具（Platform & Engineering）","type":"branch","children":[
+      {"name":"Web Platform","type":"project","children":[{"name":"Next.js","type":"technology"},{"name":"Nuxt / Nitro","type":"technology"},{"name":"Frontend","type":"module"},{"name":"Backend / API","type":"module"}]},
+      {"name":"数据平台","type":"project","children":[{"name":"PostgreSQL","type":"technology"},{"name":"Prisma","type":"technology"},{"name":"Data Pipeline","type":"module"},{"name":"Search Index","type":"module"}]},
+      {"name":"开发与协作","type":"project","children":[{"name":"Git / GitHub","type":"tool"},{"name":"CI / CD","type":"module"},{"name":"Testing","type":"module"},{"name":"Documentation","type":"module"}]},
+      {"name":"运行与观测","type":"project","children":[{"name":"Deployment","type":"module"},{"name":"Monitoring","type":"module"},{"name":"Observability","type":"module"},{"name":"Reliability","type":"module"}]}
+    ]},
+    {"name":"隐私、合规与数据治理（Privacy & Governance）","type":"branch","children":[
+      {"name":"数据治理","type":"project","children":[{"name":"Data Quality","type":"module"},{"name":"Data Lineage","type":"module"},{"name":"Provenance","type":"module"},{"name":"Retention","type":"module"}]},
+      {"name":"隐私保护","type":"project","children":[{"name":"PII Handling","type":"module"},{"name":"Access Control","type":"module"},{"name":"Anonymization","type":"module"}]},
+      {"name":"合规体系","type":"project","children":[{"name":"Legal Compliance","type":"module"},{"name":"Source Policy","type":"module"},{"name":"Terms / Licensing","type":"module"}]}
+    ]},
+    {"name":"OSINT 开源情报资源（OSINT Resources）","type":"branch","children":[
+      {"name":"身份 / 人员 / 组织","type":"collection","children":[{"name":"Username","type":"collection"},{"name":"Email","type":"collection"},{"name":"People Search","type":"collection"},{"name":"Company Intelligence","type":"collection"}]},
+      {"name":"网络 / 网站 / 基础设施","type":"collection","children":[{"name":"Domains / DNS","type":"collection"},{"name":"IP / ASN / BGP","type":"collection"},{"name":"Web Intelligence","type":"collection"},{"name":"Internet Assets","type":"collection"}]},
+      {"name":"搜索 / 社交 / 媒体","type":"collection","children":[{"name":"Search","type":"collection"},{"name":"Social Media","type":"collection"},{"name":"Images","type":"collection"},{"name":"Video / Audio","type":"collection"}]},
+      {"name":"GEOINT / 安全 / 威胁","type":"collection","children":[{"name":"GEOINT","type":"collection"},{"name":"Threat Intelligence","type":"collection"},{"name":"Vulnerability Research","type":"collection"}]},
+      {"name":"公共记录 / 档案 / 数据集","type":"collection","children":[{"name":"Government","type":"collection"},{"name":"Legal","type":"collection"},{"name":"Archives","type":"collection"},{"name":"Datasets","type":"collection"}]},
+      {"name":"工具 / 框架 / 开源项目","type":"collection","children":[{"name":"OSINT Tools","type":"collection"},{"name":"Frameworks","type":"collection"},{"name":"Repositories","type":"collection"},{"name":"Research Communities","type":"collection"}]}
+    ]}
   ]
 }
