@@ -2,50 +2,103 @@
   "name": "天网系统（TIANNET System）",
   "type": "system-root",
   "children": [
-    {"name":"天网核心与知识体系（TIANNET Core & Knowledge）","type":"branch","children":[
-      {"name":"TIANNET 天网","type":"project","children":[
+    {
+      "name": "TIANNET 天网",
+      "type": "project",
+      "children": [
         {"name":"知识网络（Knowledge Network）","type":"module","children":[{"name":"分类体系（Taxonomy）","type":"module"},{"name":"实体网络（Entity Network）","type":"module"},{"name":"关系网络（Relationship Network）","type":"module"}]},
         {"name":"知识治理（Knowledge Governance）","type":"module","children":[{"name":"数据治理（Data Governance）","type":"module"},{"name":"来源溯源（Provenance）","type":"module"},{"name":"质量控制（Quality Control）","type":"module"}]},
         {"name":"Tree UI","type":"module","children":[{"name":"节点系统（Node System）","type":"module"},{"name":"分支系统（Branch System）","type":"module"},{"name":"搜索与导航（Search & Navigation）","type":"module"}]}
-      ]},
-      {"name":"统一数据底座","type":"project","children":[{"name":"原始采集（Raw Collection）","type":"module"},{"name":"事实 / 实体（Fact / Entity）","type":"module"},{"name":"关系（Relationship）","type":"module"},{"name":"快照 / 事件（Snapshot / Event）","type":"module"},{"name":"洞察 / 证据（Insight / Evidence）","type":"module"}]}
-    ]},
-    {"name":"网站与互联网情报（Web & Internet Intelligence）","type":"branch","children":[
-      {"name":"SiteIntel","type":"project","children":[{"name":"网站情报（Website Intelligence）","type":"module"},{"name":"技术情报（Technology Intelligence）","type":"module"},{"name":"技术目录（Technology Catalog）","type":"module"},{"name":"证据 / 快照 / 事件（Evidence / Snapshot / Event）","type":"module"},{"name":"网站发现（Website Discovery）","type":"module"}]},
-      {"name":"Mangzhuo / Website","type":"project","children":[{"name":"网站导航（Website Navigation）","type":"module"},{"name":"网站发现（Website Discovery）","type":"module"},{"name":"网站目录（Website Directory）","type":"module"},{"name":"候选 / 种子 / 排名（Candidate / Seed / Ranking）","type":"module"}]},
-      {"name":"URL 与域名情报","type":"project","children":[{"name":"域名（Domain）","type":"module"},{"name":"网址（URL）","type":"module"},{"name":"域名系统（DNS）","type":"module"},{"name":"子域名（Subdomain）","type":"module"},{"name":"证书（Certificate）","type":"module"}]}
-    ]},
-    {"name":"IP、网络与基础设施情报（IP & Infrastructure）","type":"branch","children":[
-      {"name":"DUONIU","type":"project","children":[{"name":"IP 情报（IP Intelligence）","type":"module"},{"name":"IP / ASN / BGP（IP / ASN / BGP）","type":"module"},{"name":"域名 / DNS（Domain / DNS）","type":"module"},{"name":"地理定位（Geolocation）","type":"module"},{"name":"基础设施情报（Infrastructure Intelligence）","type":"module"}]},
-      {"name":"互联网资产","type":"project","children":[{"name":"IP 资产（IP Assets）","type":"module"},{"name":"域名（Domains）","type":"module"},{"name":"主机（Hosts）","type":"module"},{"name":"端口 / 服务（Ports / Services）","type":"module"},{"name":"TLS / 证书（TLS / Certificates）","type":"module"}]},
-      {"name":"网络测量","type":"project","children":[{"name":"路由（Routing）","type":"module"},{"name":"BGP（BGP）","type":"module"},{"name":"DNS 测量（DNS Measurement）","type":"module"},{"name":"延迟 / 连通性（Latency / Connectivity）","type":"module"}]}
-    ]},
-    {"name":"数据发现与采集（Discovery & Collection）","type":"branch","children":[
-      {"name":"发现引擎（Discovery Engine）","type":"project","children":[{"name":"来源（Source）","type":"module"},{"name":"排名（Ranking）","type":"module"},{"name":"候选项（Candidate）","type":"module"},{"name":"标准化（Normalization）","type":"module"},{"name":"验证（Verification）","type":"module"},{"name":"去重（Deduplication）","type":"module"}]},
-      {"name":"数据采集系统","type":"project","children":[{"name":"爬虫（Crawler）","type":"module"},{"name":"抓取（Fetch）","type":"module"},{"name":"安全抓取（SafeFetch）","type":"module"},{"name":"元数据（Metadata）","type":"module"},{"name":"证据采集（Evidence Collection）","type":"module"}]},
-      {"name":"数据源体系","type":"project","children":[{"name":"搜索引擎（Search Engines）","type":"module"},{"name":"榜单（Rankings）","type":"module"},{"name":"目录（Directories）","type":"module"},{"name":"公共数据集（Public Datasets）","type":"module"},{"name":"信息源 / API（Feeds / APIs）","type":"module"}]}
-    ]},
-    {"name":"搜索与信息检索（Search & Retrieval）","type":"branch","children":[
-      {"name":"搜索引擎","type":"project","children":[{"name":"网页搜索（Web Search）","type":"module"},{"name":"新闻搜索（News Search）","type":"module"},{"name":"图片搜索（Image Search）","type":"module"},{"name":"视频搜索（Video Search）","type":"module"}]},
-      {"name":"高级检索","type":"project","children":[{"name":"搜索操作符（Search Operators）","type":"module"},{"name":"搜索语法 / Dork（Dorks）","type":"module"},{"name":"站内搜索（Site Search）","type":"module"},{"name":"文件类型搜索（Filetype Search）","type":"module"}]},
-      {"name":"信息检索系统","type":"project","children":[{"name":"索引（Indexing）","type":"module"},{"name":"排名（Ranking）","type":"module"},{"name":"语义搜索（Semantic Search）","type":"module"},{"name":"知识检索（Knowledge Retrieval）","type":"module"}]}
-    ]},
-    {"name":"AI、机器学习与智能情报（AI & Intelligent Analysis）","type":"branch","children":[
-      {"name":"AI 基础设施","type":"project","children":[{"name":"Codex","type":"tool"},{"name":"OpenClaw","type":"tool"},{"name":"Ollama","type":"tool"},{"name":"模型网关（Model Gateway）","type":"module"}]},
-      {"name":"情报智能层","type":"project","children":[{"name":"分类（Classification）","type":"module"},{"name":"实体解析（Entity Resolution）","type":"module"},{"name":"关系推断（Relationship Inference）","type":"module"},{"name":"洞察生成（Insight Generation）","type":"module"}]},
-      {"name":"机器学习分析","type":"project","children":[{"name":"信息抽取（Information Extraction）","type":"module"},{"name":"实体抽取（Entity Extraction）","type":"module"},{"name":"异常检测（Anomaly Detection）","type":"module"},{"name":"排名 / 评分（Ranking / Scoring）","type":"module"}]},
-      {"name":"智能代理（Agent Intelligence）","type":"project","children":[{"name":"研究代理（Research Agents）","type":"module"},{"name":"采集代理（Collection Agents）","type":"module"},{"name":"分析代理（Analysis Agents）","type":"module"}]}
-    ]},
-    {"name":"平台、基础设施与开发工具（Platform & Engineering）","type":"branch","children":[
-      {"name":"Web 平台（Web Platform）","type":"project","children":[{"name":"Next.js","type":"technology"},{"name":"Nuxt / Nitro","type":"technology"},{"name":"前端（Frontend）","type":"module"},{"name":"后端 / API（Backend / API）","type":"module"}]},
-      {"name":"数据平台","type":"project","children":[{"name":"PostgreSQL","type":"technology"},{"name":"Prisma","type":"technology"},{"name":"数据管道（Data Pipeline）","type":"module"},{"name":"搜索索引（Search Index）","type":"module"}]},
-      {"name":"开发与协作","type":"project","children":[{"name":"Git / GitHub","type":"tool"},{"name":"CI / CD","type":"module"},{"name":"测试（Testing）","type":"module"},{"name":"文档（Documentation）","type":"module"}]},
-      {"name":"运行与观测","type":"project","children":[{"name":"部署（Deployment）","type":"module"},{"name":"监控（Monitoring）","type":"module"},{"name":"可观测性（Observability）","type":"module"},{"name":"可靠性（Reliability）","type":"module"}]}
-    ]},
-    {"name":"隐私、合规与数据治理（Privacy & Governance）","type":"branch","children":[
-      {"name":"数据治理","type":"project","children":[{"name":"数据质量（Data Quality）","type":"module"},{"name":"数据血缘（Data Lineage）","type":"module"},{"name":"来源溯源（Provenance）","type":"module"},{"name":"数据保留（Retention）","type":"module"}]},
-      {"name":"隐私保护","type":"project","children":[{"name":"个人信息处理（PII Handling）","type":"module"},{"name":"访问控制（Access Control）","type":"module"},{"name":"匿名化（Anonymization）","type":"module"}]},
-      {"name":"合规体系","type":"project","children":[{"name":"法律合规（Legal Compliance）","type":"module"},{"name":"来源策略（Source Policy）","type":"module"},{"name":"条款 / 授权（Terms / Licensing）","type":"module"}]}
-    ]}
+      ]
+    },
+    {
+      "name": "统一数据底座（Unified Data Foundation）",
+      "type": "project",
+      "children": [
+        {"name":"原始采集（Raw Collection）","type":"module"},
+        {"name":"事实 / 实体（Fact / Entity）","type":"module"},
+        {"name":"关系（Relationship）","type":"module"},
+        {"name":"快照 / 事件（Snapshot / Event）","type":"module"},
+        {"name":"洞察 / 证据（Insight / Evidence）","type":"module"}
+      ]
+    },
+    {
+      "name": "SiteIntel",
+      "type": "project",
+      "children": [
+        {"name":"网站情报（Website Intelligence）","type":"module"},
+        {"name":"技术情报（Technology Intelligence）","type":"module"},
+        {"name":"技术目录（Technology Catalog）","type":"module"},
+        {"name":"证据 / 快照 / 事件（Evidence / Snapshot / Event）","type":"module"},
+        {"name":"网站发现（Website Discovery）","type":"module"}
+      ]
+    },
+    {
+      "name": "Mangzhuo / Website",
+      "type": "project",
+      "children": [
+        {"name":"网站导航（Website Navigation）","type":"module"},
+        {"name":"网站目录（Website Directory）","type":"module"},
+        {"name":"网站发现（Website Discovery）","type":"module"},
+        {"name":"候选 / 种子 / 排名（Candidate / Seed / Ranking）","type":"module"}
+      ]
+    },
+    {
+      "name": "DUONIU",
+      "type": "project",
+      "children": [
+        {"name":"IP 情报（IP Intelligence）","type":"module"},
+        {"name":"IP / ASN / BGP（IP / ASN / BGP）","type":"module"},
+        {"name":"域名 / DNS（Domain / DNS）","type":"module"},
+        {"name":"地理定位（Geolocation）","type":"module"},
+        {"name":"基础设施情报（Infrastructure Intelligence）","type":"module"}
+      ]
+    },
+    {
+      "name": "数据发现与采集（Discovery & Collection）",
+      "type": "project",
+      "children": [
+        {"name":"发现引擎（Discovery Engine）","type":"module","children":[{"name":"来源（Source）","type":"module"},{"name":"排名（Ranking）","type":"module"},{"name":"候选项（Candidate）","type":"module"},{"name":"标准化（Normalization）","type":"module"},{"name":"验证（Verification）","type":"module"},{"name":"去重（Deduplication）","type":"module"}]},
+        {"name":"数据采集系统","type":"module","children":[{"name":"爬虫（Crawler）","type":"module"},{"name":"抓取（Fetch）","type":"module"},{"name":"安全抓取（SafeFetch）","type":"module"},{"name":"元数据（Metadata）","type":"module"},{"name":"证据采集（Evidence Collection）","type":"module"}]},
+        {"name":"数据源体系","type":"module","children":[{"name":"搜索引擎（Search Engines）","type":"module"},{"name":"榜单（Rankings）","type":"module"},{"name":"目录（Directories）","type":"module"},{"name":"公共数据集（Public Datasets）","type":"module"},{"name":"信息源 / API（Feeds / APIs）","type":"module"}]}
+      ]
+    },
+    {
+      "name": "搜索与信息检索（Search & Retrieval）",
+      "type": "project",
+      "children": [
+        {"name":"搜索能力","type":"module","children":[{"name":"网页搜索（Web Search）","type":"module"},{"name":"新闻搜索（News Search）","type":"module"},{"name":"图片搜索（Image Search）","type":"module"},{"name":"视频搜索（Video Search）","type":"module"}]},
+        {"name":"高级检索","type":"module","children":[{"name":"搜索操作符（Search Operators）","type":"module"},{"name":"站内搜索（Site Search）","type":"module"},{"name":"文件类型搜索（Filetype Search）","type":"module"}]},
+        {"name":"信息检索系统","type":"module","children":[{"name":"索引（Indexing）","type":"module"},{"name":"排名（Ranking）","type":"module"},{"name":"语义搜索（Semantic Search）","type":"module"},{"name":"知识检索（Knowledge Retrieval）","type":"module"}]}
+      ]
+    },
+    {
+      "name": "AI、机器学习与智能情报（AI & Intelligent Analysis）",
+      "type": "project",
+      "children": [
+        {"name":"AI 基础设施","type":"module","children":[{"name":"Codex","type":"tool"},{"name":"OpenClaw","type":"tool"},{"name":"Ollama","type":"tool"},{"name":"模型网关（Model Gateway）","type":"module"}]},
+        {"name":"情报智能层","type":"module","children":[{"name":"分类（Classification）","type":"module"},{"name":"实体解析（Entity Resolution）","type":"module"},{"name":"关系推断（Relationship Inference）","type":"module"},{"name":"洞察生成（Insight Generation）","type":"module"}]},
+        {"name":"智能代理（Agent Intelligence）","type":"module","children":[{"name":"研究代理（Research Agents）","type":"module"},{"name":"采集代理（Collection Agents）","type":"module"},{"name":"分析代理（Analysis Agents）","type":"module"}]}
+      ]
+    },
+    {
+      "name": "平台与工程（Platform & Engineering）",
+      "type": "project",
+      "children": [
+        {"name":"Web 平台（Web Platform）","type":"module","children":[{"name":"Next.js","type":"technology"},{"name":"Nuxt / Nitro","type":"technology"},{"name":"前端（Frontend）","type":"module"},{"name":"后端 / API（Backend / API）","type":"module"}]},
+        {"name":"数据平台","type":"module","children":[{"name":"PostgreSQL","type":"technology"},{"name":"Prisma","type":"technology"},{"name":"数据管道（Data Pipeline）","type":"module"},{"name":"搜索索引（Search Index）","type":"module"}]},
+        {"name":"开发与协作","type":"module","children":[{"name":"Git / GitHub","type":"tool"},{"name":"CI / CD","type":"module"},{"name":"测试（Testing）","type":"module"},{"name":"文档（Documentation）","type":"module"}]},
+        {"name":"运行与观测","type":"module","children":[{"name":"部署（Deployment）","type":"module"},{"name":"监控（Monitoring）","type":"module"},{"name":"可观测性（Observability）","type":"module"},{"name":"可靠性（Reliability）","type":"module"}]}
+      ]
+    },
+    {
+      "name": "治理与安全（Governance & Security）",
+      "type": "project",
+      "children": [
+        {"name":"数据治理","type":"module","children":[{"name":"数据质量（Data Quality）","type":"module"},{"name":"数据血缘（Data Lineage）","type":"module"},{"name":"来源溯源（Provenance）","type":"module"}]},
+        {"name":"访问与隐私","type":"module","children":[{"name":"个人信息处理（PII Handling）","type":"module"},{"name":"访问控制（Access Control）","type":"module"},{"name":"匿名化（Anonymization）","type":"module"}]},
+        {"name":"合规体系","type":"module","children":[{"name":"法律合规（Legal Compliance）","type":"module"},{"name":"来源策略（Source Policy）","type":"module"},{"name":"条款 / 授权（Terms / Licensing）","type":"module"}]}
+      ]
+    }
   ]
 }
