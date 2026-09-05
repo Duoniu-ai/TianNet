@@ -5,7 +5,6 @@
     {
       "name": "网站发现与导航系统｜Website.TianNet.cn",
       "type": "project",
-      "url": "https://Website.TianNet.cn/",
       "children": [
         {"name":"网站发现（Website Discovery）","type":"module","children":[{"name":"来源（Source）","type":"module"},{"name":"种子（Seed）","type":"module"},{"name":"候选（Candidate）","type":"module"},{"name":"发现规则（Discovery Rules）","type":"module"}]},
         {"name":"网站导航（Website Navigation）","type":"module","children":[{"name":"分类目录（Directory）","type":"module"},{"name":"网站分类（Categories）","type":"module"},{"name":"网站排名（Website Ranking）","type":"module"},{"name":"推荐（Recommendations）","type":"module"}]},
@@ -16,7 +15,6 @@
     {
       "name": "网站数据情报系统｜SiteIntel.TianNet.cn",
       "type": "project",
-      "url": "https://SiteIntel.TianNet.cn/",
       "children": [
         {"name":"网站资产（Website Assets）","type":"module","children":[{"name":"域名（Domain）","type":"module"},{"name":"DNS","type":"module"},{"name":"TLS / 证书（Certificates）","type":"module"},{"name":"HTTP","type":"module"},{"name":"网络端点（Endpoints）","type":"module"}]},
         {"name":"网站基础设施（Website Infrastructure）","type":"module","children":[{"name":"IP","type":"module"},{"name":"ASN","type":"module"},{"name":"CDN","type":"module"},{"name":"WAF","type":"module"},{"name":"托管（Hosting）","type":"module"}]},
